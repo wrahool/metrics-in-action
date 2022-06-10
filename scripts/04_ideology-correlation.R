@@ -1,4 +1,4 @@
-# this script produces the figure A3 in the appendix..
+# this script produces figure A3 in the Appendix.
 
 library(tidyverse)
 library(scales)

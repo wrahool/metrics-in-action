@@ -17,7 +17,7 @@ library(ggpubr)
 data_folder <- "/path/to/data/folder/"
 
 # read aggregated data
-model_tbl <- read_csv(glue(data_folder, "aggregated_data-10_periods.csv"))
+model_tbl <- read_csv(glue(data_folder, "aggregated_data-10_periods-window-1.csv"))
 
 # read handcoded files
 topic_entertainment <- read_csv(glue(data_folder, "topic_entertainment_10.csv"))

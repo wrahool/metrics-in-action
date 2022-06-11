@@ -14,7 +14,9 @@ library(ggrepel)
 library(ggpubr)
 
 # set correct path to folder with all CSV files
-data_folder <- "/path/to/data/folder/"
+# data_folder <- "/path/to/data/folder/"
+
+data_folder <- "C:/Users/Subhayan/Desktop/data/"
 
 # read aggregated data
 model_tbl <- read_csv(glue(data_folder, "aggregated_data-60_periods-window-1.csv"))
@@ -272,7 +274,7 @@ partisan_viz <- ggplot(partisan_viz_tbl, aes(x=ideo, y=coeff)) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="ideology") +
   theme(strip.text.y = element_text(size = 30)) +
-  labs(x = "Media slant", y = "Responsiveness") +
+  labs(x = "Outlet slant", y = "Responsiveness") +
   theme_bw()
 
 # entertainment topics

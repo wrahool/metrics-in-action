@@ -272,7 +272,7 @@ partisan_viz <- ggplot(partisan_viz_tbl, aes(x=ideo, y=coeff)) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="ideology") +
   theme(strip.text.y = element_text(size = 30)) +
-  labs(x = "Media slant", y = "Responsiveness") +
+  labs(x = "Outlet slant", y = "Responsiveness") +
   theme_bw()
 
 # entertainment topics

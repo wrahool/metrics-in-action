@@ -15,7 +15,7 @@ Your working directory should have three subfolders in it:
 Details about the scripts are as follows:
 
 - `01_longitudinal-analysis.R` creates figure 1 (in the main text).
-- `01_main-analysis.R` creates table 1 and figures 2 and 3 (in the main text).
+- `02_main-analysis.R` creates table 1 and figures 2 and 3 (in the main text).
 - `03_robustness-with-10-periods.R` creates table A1 and figures A1 and A2 (in the appendix).
 - `04_ideology-correlation.R` creates figure A3 (in the appendix).
 - `05_robustness-with-alternative-ideology-scores.R` creates figures A4 and A5 (in the appendix).

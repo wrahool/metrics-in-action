@@ -1,6 +1,6 @@
 # Metrics in Action: How Social Media Metrics Shape News Production on Facebook
 
-Replication scripts for Metrics in Action project.
+Replication scripts for the Metrics in Action project by Subhayan Mukerjee, Tian Yang, and Yilang Peng.
 
 To run these scripts
 - change the `data_folder` variable to reflect the path to the folder that contains all the `.csv` files

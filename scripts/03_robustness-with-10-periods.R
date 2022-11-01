@@ -1,4 +1,4 @@
-# this script produces the robustness results (table A1) and figures A1 and A2 in the Appendix.
+# This script produces Table A1 and Figures A2 and A3
 
 library(rjson)
 library(tidyverse)
@@ -14,7 +14,7 @@ library(ggrepel)
 library(ggpubr)
 
 # set correct path to folder with all CSV files
-data_folder <- "/path/to/data/folder/"
+# data_folder <- "/path/to/data/folder/"
 
 # read aggregated data
 model_tbl <- read_csv(glue(data_folder, "aggregated_data-10_periods-window-1.csv"))
@@ -28,7 +28,6 @@ media_details_tbl <- read_csv(glue(data_folder, "media_language.csv"))
 media_label_map <- read_csv(glue(data_folder, "media_label_map.csv"))
 media_ideology <- read_csv(glue(data_folder, "media_ideo.csv"))
 
-# models
 
 m1 <- felm(curr_topic_prop  ~ log_eng_sig | 
              media_id + window + final_topic | 0 | media_id + window,
@@ -181,7 +180,7 @@ outlet_viz_tbl <- outlet_viz_tbl %>%
 outlet_responsiveness_hor <- ggplot(outlet_viz_tbl) +
   geom_pointrange(aes(ymin = lower, ymax = upper, x = media_name, y = responsiveness)) +
   geom_hline(yintercept = 0, linetype = "dashed") +
-  lims(y = c(-0.003, 0.01)) +
+  lims(y = c(-0.0035, 0.007)) +
   labs(y = "Responsiveness", x = "Media outlet") +
   theme_bw() +
   scale_color_manual(values = c("black" = "black", "red" = "red")) +
@@ -272,7 +271,7 @@ partisan_viz <- ggplot(partisan_viz_tbl, aes(x=ideo, y=coeff)) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="ideology") +
   theme(strip.text.y = element_text(size = 30)) +
-  labs(x = "Outlet slant", y = "Responsiveness") +
+  labs(x = "Media slant", y = "Responsiveness") +
   theme_bw()
 
 # entertainment topics
@@ -338,5 +337,6 @@ plot_grid(plotlist = list(partisan_viz, entertainment_viz),
           labels = LETTERS)
 
 ggsave("figures/figA2.svg", width = 10, height = 6, units = "in")
+
 
 

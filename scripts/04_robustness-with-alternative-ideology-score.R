@@ -1,5 +1,4 @@
-# this script produces the robustness results with 60 periods, but with 
-# alternative ideological scores i.e. figures A4 and A5 in the Appendix.
+# creates Fig A5 and A6
 
 library(rjson)
 library(tidyverse)
@@ -10,14 +9,13 @@ library(modelsummary)
 library(gt)
 library(glue)
 library(ggtext)
-library(cowplot)
 library(ggrepel)
 library(ggpubr)
+library(cowplot)
+
 
 # set correct path to folder with all CSV files
-data_folder <- "/path/to/data/folder/"
-
-data_folder <- "C:/Users/Subhayan/Desktop/data/"
+# data_folder <- "/path/to/data/folder/"
 
 # read aggregated data
 model_tbl <- read_csv(glue(data_folder, "aggregated_data-60_periods-window-1.csv"))
@@ -31,27 +29,35 @@ media_details_tbl <- read_csv(glue(data_folder, "media_language.csv"))
 media_label_map <- read_csv(glue(data_folder, "media_label_map.csv"))
 media_ideology <- read_csv(glue(data_folder, "media_ideo2.csv"))
 
-# models
 
-m1 <- felm(curr_topic_prop  ~ log_eng_sig | 
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl)
+# 
+# m1 <- felm(curr_topic_prop  ~ log_eng_sig | 
+#              media_id + window + final_topic | 0 | media_id + window,
+#            data = model_tbl)
+# 
+# m2 <- felm(curr_topic_prop ~ log_eng_sig + last_topic_prop |
+#              media_id + window + final_topic | 0 | media_id + window,
+#            data = model_tbl)
+# 
+# m3 <- felm(curr_topic_prop ~ last_topic_prop |
+#              media_id + window + final_topic | 0 | media_id + window,
+#            data = model_tbl)
+# 
+# m4 <- felm(curr_topic_prop ~ log_eng_sig + last_topic_prop + log_avg_eng_sig |
+#              media_id + window + final_topic | 0 | media_id + window,
+#            data = model_tbl)
+# 
+# m5 <- felm(curr_topic_prop ~ log_eng_sig + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
+#              media_id + window + final_topic | 0 | media_id + window,
+#            data = model_tbl)
+# 
+# if (!dir.exists(glue("results/JOC/seasonal/{params$n_seasons}-seasons/"))) {
+#   print("Creating directories for model results...")
+#   dir.create(glue("results/JOC/seasonal/{params$n_seasons}-seasons/"))
+#   dir.create(glue("results/JOC/seasonal/{params$n_seasons}-seasons/models/"))
+#   dir.create(glue("results/JOC/seasonal/{params$n_seasons}-seasons/figures/"))
+# }
 
-m2 <- felm(curr_topic_prop ~ log_eng_sig + last_topic_prop |
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl)
-
-m3 <- felm(curr_topic_prop ~ last_topic_prop |
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl)
-
-m4 <- felm(curr_topic_prop ~ log_eng_sig + last_topic_prop + log_avg_eng_sig |
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl)
-
-m5 <- felm(curr_topic_prop ~ log_eng_sig + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl)
 
 topic_politics <- topic_politics %>%
   arrange(season, topic) %>%
@@ -64,20 +70,27 @@ topic_pol_ent <- topic_entertainment %>%
 topic_pol_ent <- topic_pol_ent %>%
   mutate(topic_other = ifelse(entertainment == 0 & political == 0, 1, 0)) %>%
   mutate(topic_entertainment = ifelse(entertainment == 1, 1, 0)) %>%
-  mutate(topic_political = ifelse(political == 2, 1, 0)) %>% 
+  mutate(topic_political = ifelse(political == 2, 1, 0)) %>%
   mutate(final_topic = glue("{season}_{topic}"))
 
 
 model_tbl <- model_tbl %>%
   inner_join(topic_pol_ent, by = "final_topic")
-
-m6 <- felm(curr_topic_prop ~ log_eng_sig * topic_other + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl)
-
-m7 <- felm(curr_topic_prop ~ log_eng_sig * topic_political + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl)
+# 
+# m6 <- felm(curr_topic_prop ~ log_eng_sig * topic_other + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
+#              media_id + window + final_topic | 0 | media_id + window,
+#            data = model_tbl)
+# 
+# m7 <- felm(curr_topic_prop ~ log_eng_sig * topic_political + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
+#              media_id + window + final_topic | 0 | media_id + window,
+#            data = model_tbl)
+# 
+# 
+# modelsummary(models = list(m2, m4, m5, m7),
+#              output = "gt", stars = TRUE, statistic = c("std.error"), fmt = 4,
+#              coef_omit = "^topic") %>%
+#   gtsave(filename = glue("results/JOC/seasonal/{params$n_seasons}-seasons/models/overleaf/",
+#                          "table1.tex"))
 
 # outlet level
 
@@ -143,47 +156,49 @@ final_coef_tbl <- m_coef_tbl %>%
   select(media, coeff, p, se) %>%
   rename("responsiveness" = 2, "p_value" = 3, "se" = 4)
 
-final_coef_tbl <- final_coef_tbl %>%
-  add_row(media = "All Media",
-          responsiveness = m5 %>% tidy() %>% filter(term == "log_eng_sig") %>% pull(estimate),
-          p_value = m5 %>% tidy() %>% filter(term == "log_eng_sig") %>% pull(p.value),
-          se = m5 %>% tidy() %>% filter(term == "log_eng_sig") %>% pull(std.error)
-  )
+# final_coef_tbl <- final_coef_tbl %>%
+#   add_row(media = "All Media",
+#           responsiveness = m5 %>% tidy() %>% filter(term == "log_eng_sig") %>% pull(estimate),
+#           p_value = m5 %>% tidy() %>% filter(term == "log_eng_sig") %>% pull(p.value),
+#           se = m5 %>% tidy() %>% filter(term == "log_eng_sig") %>% pull(std.error)
+#   )
 
-final_coef_tbl <- final_coef_tbl %>%
-  mutate(season = "All Seasons") %>%
-  select(media, season, everything())
-
-outlet_viz_tbl <- final_coef_tbl %>%
-  inner_join(media_label_map, by = c("media" = "label")) %>%
-  select(short_name, season, responsiveness, p_value, se) %>%
-  rename(media = short_name) %>%
-  mutate(season = as.character(season)) %>%
-  mutate(media_color = ifelse(media == "All Media", "red", "black")) %>%
-  mutate(media_name = glue("<p style='color:{media_color}'>{media}</p>")) %>%
-  mutate(media = as.factor(media),
-         season = as.factor(season))
-
-media_order <- outlet_viz_tbl %>%
-  filter(season == "All Seasons") %>%
-  arrange(responsiveness) %>%
-  pull(media_name) %>%
-  as.character()
-
-outlet_viz_tbl <- outlet_viz_tbl %>% 
-  mutate(media_name = fct_relevel(media_name, media_order)) %>%
-  mutate(upper = responsiveness + 1.96*se,
-         lower = responsiveness - 1.96*se)
-
-outlet_responsiveness_hor <- ggplot(outlet_viz_tbl) +
-  geom_pointrange(aes(ymin = lower, ymax = upper, x = media_name, y = responsiveness)) +
-  geom_hline(yintercept = 0, linetype = "dashed") +
-  lims(y = c(-0.003, 0.01)) +
-  labs(y = "Responsiveness", x = "Media outlet") +
-  theme_bw() +
-  scale_color_manual(values = c("black" = "black", "red" = "red")) +
-  theme(axis.text.x = element_markdown(angle=90, hjust = 1, vjust = 0.5),
-        legend.position = "none")
+# final_coef_tbl <- final_coef_tbl %>%
+#   mutate(season = "All Seasons") %>%
+#   select(media, season, everything())
+# 
+# media_label_map <- read_csv("auxiliary/media_label_map.csv")
+# 
+# outlet_viz_tbl <- final_coef_tbl %>%
+#   inner_join(media_label_map, by = c("media" = "label")) %>%
+#   select(short_name, season, responsiveness, p_value, se) %>%
+#   rename(media = short_name) %>%
+#   mutate(season = as.character(season)) %>%
+#   mutate(media_color = ifelse(media == "All Media", "red", "black")) %>%
+#   mutate(media_name = glue("<p style='color:{media_color}'>{media}</p>")) %>%
+#   mutate(media = as.factor(media),
+#          season = as.factor(season))
+# 
+# media_order <- outlet_viz_tbl %>%
+#   filter(season == "All Seasons") %>%
+#   arrange(responsiveness) %>%
+#   pull(media_name) %>%
+#   as.character()
+# 
+# outlet_viz_tbl <- outlet_viz_tbl %>% 
+#   mutate(media_name = fct_relevel(media_name, media_order)) %>%
+#   mutate(upper = responsiveness + 1.96*se,
+#          lower = responsiveness - 1.96*se)
+# 
+# outlet_responsiveness_hor <- ggplot(outlet_viz_tbl) +
+#   geom_pointrange(aes(ymin = lower, ymax = upper, x = media_name, y = responsiveness)) +
+#   geom_hline(yintercept = 0, linetype = "dashed") +
+#   lims(y = c(-0.003, 0.01)) +
+#   labs(y = "Responsiveness", x = "Media outlet") +
+#   theme_bw() +
+#   scale_color_manual(values = c("black" = "black", "red" = "red")) +
+#   theme(axis.text.x = element_markdown(angle=90, hjust = 1, vjust = 0.5),
+#         legend.position = "none")
 
 ## correlation with ideology
 
@@ -193,9 +208,7 @@ media_ideology <- media_ideology %>%
 
 resp_ideo_tbl <- final_coef_tbl %>%
   select(media, responsiveness) %>%
-  inner_join(media_ideology) %>%
-  select(-media) %>%
-  rename(media = short_name) %>%
+  inner_join(media_ideology, by = c("media" = "media")) %>%
   mutate(ideo = rescale(ideo, to = c(1,5)))
 
 resp_ideo_scatterplot <- ggplot(resp_ideo_tbl, aes(x=ideo, y=responsiveness)) +
@@ -204,9 +217,13 @@ resp_ideo_scatterplot <- ggplot(resp_ideo_tbl, aes(x=ideo, y=responsiveness)) +
   geom_smooth(method = "lm", se = TRUE) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="Outlet slant", y = "Responsiveness") +
+  lims(x=c(1,5)) +
   theme_bw()
 
-ggsave("figures/figA4.svg", width = 5, height = 6, units = "in")
+# plot_grid(plotlist = list(outlet_responsiveness_hor, resp_ideo_scatterplot),
+#           labels = LETTERS)
+
+ggsave(glue("figures/figA4.svg"), width = 5, height = 6, units = "in")
 
 # partisan topics
 
@@ -264,7 +281,7 @@ partisan_viz <- ggplot(partisan_viz_tbl, aes(x=ideo, y=coeff)) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="ideology") +
   theme(strip.text.y = element_text(size = 30)) +
-  labs(x = "Outlet slant", y = "Responsiveness") +
+  labs(x = "Media slant", y = "Responsiveness") +
   theme_bw()
 
 # entertainment topics
@@ -322,10 +339,12 @@ entertainment_viz <- ggplot(entertainment_viz_tbl, aes(x=ideo, y=coeff)) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="ideology") +
   theme(strip.text.y = element_text(size = 30)) +
-  labs(x = "Outlet slant", y = "Responsiveness") +
+  labs(x = "Media slant", y = "Responsiveness") +
   theme_bw()
 
 plot_grid(plotlist = list(partisan_viz, entertainment_viz),
           labels = LETTERS)
 
 ggsave("figures/figA5.svg", width = 10, height = 6, units = "in")
+
+

@@ -1,5 +1,6 @@
 # this script produces the main results (table 1) and figures 2 and 3 in the main text.
 
+
 library(rjson)
 library(tidyverse)
 library(lubridate)
@@ -12,11 +13,10 @@ library(ggtext)
 library(cowplot)
 library(ggrepel)
 library(ggpubr)
+library(plm)
 
 # set correct path to folder with all CSV files
 # data_folder <- "/path/to/data/folder/"
-
-data_folder <- "C:/Users/Subhayan/Desktop/data/"
 
 # read aggregated data
 model_tbl <- read_csv(glue(data_folder, "aggregated_data-60_periods-window-1.csv"))
@@ -30,7 +30,11 @@ media_details_tbl <- read_csv(glue(data_folder, "media_language.csv"))
 media_label_map <- read_csv(glue(data_folder, "media_label_map.csv"))
 media_ideology <- read_csv(glue(data_folder, "media_ideo.csv"))
 
-# models
+#SD of curr_topic_prop 
+
+sd(model_tbl$curr_topic_prop)
+
+# fit models
 
 m1 <- felm(curr_topic_prop  ~ log_eng_sig | 
              media_id + window + final_topic | 0 | media_id + window,
@@ -52,6 +56,7 @@ m5 <- felm(curr_topic_prop ~ log_eng_sig + last_topic_prop + last_topic_prop_all
              media_id + window + final_topic | 0 | media_id + window,
            data = model_tbl)
 
+
 topic_politics <- topic_politics %>%
   arrange(season, topic) %>%
   rename(political = 3)%>%
@@ -61,7 +66,7 @@ topic_pol_ent <- topic_entertainment %>%
   inner_join(topic_politics, by = c("season", "topic"))
 
 topic_pol_ent <- topic_pol_ent %>%
-  mutate(topic_other = ifelse(entertainment == 0 & political == 0, 1, 0)) %>%
+  # mutate(topic_other = ifelse(entertainment == 0 & political == 0, 1, 0)) %>%
   mutate(topic_entertainment = ifelse(entertainment == 1, 1, 0)) %>%
   mutate(topic_political = ifelse(political == 2, 1, 0)) %>% 
   mutate(final_topic = glue("{season}_{topic}"))
@@ -70,9 +75,9 @@ topic_pol_ent <- topic_pol_ent %>%
 model_tbl <- model_tbl %>%
   inner_join(topic_pol_ent, by = "final_topic")
 
-m6 <- felm(curr_topic_prop ~ log_eng_sig * topic_other + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl)
+# m6 <- felm(curr_topic_prop ~ log_eng_sig * topic_other + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
+#              media_id + window + final_topic | 0 | media_id + window,
+#            data = model_tbl)
 
 m7 <- felm(curr_topic_prop ~ log_eng_sig * topic_political + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
              media_id + window + final_topic | 0 | media_id + window,
@@ -82,7 +87,7 @@ m7 <- felm(curr_topic_prop ~ log_eng_sig * topic_political + log_eng_sig * topic
 modelsummary(models = list(m2, m4, m5, m7),
              output = "gt", stars = TRUE, statistic = c("std.error"), fmt = 4,
              coef_omit = "^topic") %>%
-  gtsave(filename = "results/table1.tex")
+  gtsave(filename = glue("results/JOC/seasonal/{params$n_seasons}-seasons/models/overleafresults/table1.tex"))
 
 # outlet level
 
@@ -159,6 +164,7 @@ final_coef_tbl <- final_coef_tbl %>%
   mutate(season = "All Seasons") %>%
   select(media, season, everything())
 
+
 outlet_viz_tbl <- final_coef_tbl %>%
   inner_join(media_label_map, by = c("media" = "label")) %>%
   select(short_name, season, responsiveness, p_value, se) %>%
@@ -215,7 +221,7 @@ resp_ideo_scatterplot <- ggplot(resp_ideo_tbl, aes(x=ideo, y=responsiveness)) +
 plot_grid(plotlist = list(outlet_responsiveness_hor, resp_ideo_scatterplot),
           labels = LETTERS)
 
-ggsave("figures/fig2.svg", width = 10, height = 6, units = "in")
+ggsave("figures/fig2.svg"), width = 10, height = 6, units = "in")
 
 # partisan topics
 
@@ -263,18 +269,18 @@ partisan_viz_tbl <- m_coef_tbl %>%
   arrange(n) %>%
   inner_join(media_ideology, by = c("media" = "label")) %>%
   select(short_name, coeff, ideo)
-
+  
 partisan_viz <- ggplot(partisan_viz_tbl, aes(x=ideo, y=coeff)) +
   geom_point() +
   geom_text_repel(label = partisan_viz_tbl$short_name, col = "black",
                   # nudge_x = 0.001, nudge_y = 0.001, 
                   # max.overlaps = 15, size = 3
-  ) +
+                  ) +
   geom_smooth(method = "lm", se = TRUE) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="ideology") +
   theme(strip.text.y = element_text(size = 30)) +
-  labs(x = "Outlet slant", y = "Responsiveness") +
+  labs(x = "Media slant", y = "Responsiveness") +
   theme_bw()
 
 # entertainment topics
@@ -328,7 +334,7 @@ entertainment_viz <- ggplot(entertainment_viz_tbl, aes(x=ideo, y=coeff)) +
   geom_point() +
   geom_text_repel(label = entertainment_viz_tbl$short_name, col = "black",
                   # max.overlaps = 15, size = 3
-  ) +
+                  ) +
   geom_smooth(method = "lm", se = TRUE) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="ideology") +

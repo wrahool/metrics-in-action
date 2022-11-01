@@ -34,7 +34,7 @@ for(window_size in 1:14) {
     rbind(
       tibble(
         window = window_size,
-
+        
         m5_est = m5_tidy %>% filter(term == "log_eng_sig") %>% pull(estimate),
         m5_confl = m5_tidy %>% filter(term == "log_eng_sig") %>% pull(conf.low),
         m5_confu = m5_tidy %>% filter(term == "log_eng_sig") %>% pull(conf.high)
@@ -68,4 +68,4 @@ ggplot(m5s) +
   scale_x_continuous(breaks = seq(0,14, 2)) +
   labs(x = "Response window", y = "Responsiveness")
 
-ggsave("figures/fig1.svg", width = 10, height = 6, units = "in")
+ggsave(glue("results/JOC/seasonal/60-seasons/figures/overleaf/fig1.svg"), width = 5, height = 3, units = "in")

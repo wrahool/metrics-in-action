@@ -17,11 +17,11 @@ Details about the scripts are as follows:
 - `01_longitudinal-analysis.R` creates figure 1 (in the main text).
 - `02_main-analysis.R` creates table 1 and figures 2 and 3 (in the main text).
 - `03_test-stationarity.R` tests the stationarity assumption of the time series.
-- `03_robustness-with-10-periods.R` creates figures A2 and A3 (in the Appendix).
-- `04_robustness-with-alternative-ideology-score.R` creates figures A4, A5, and A6 (in the Appendix)
-- `05_robustness_with_quadratic_model.R` creates table A2 (in the Appendix)
-- `06_robustness-with-post-freq.R` creates table A3 (in the Appendix)
-- `07_robustness-with-interaction-analysis.R` creates table A4 (in the Appendix)
-- `08_robustness-with-shares-only.R` creates table table A5 (in the Appendix)
+- `04_robustness-with-10-periods.R` creates figures A2 and A3 (in the Appendix).
+- `05_robustness-with-alternative-ideology-score.R` creates figures A4, A5, and A6 (in the Appendix)
+- `06_robustness_with_quadratic_model.R` creates table A2 (in the Appendix)
+- `07_robustness-with-post-freq.R` creates table A3 (in the Appendix)
+- `08_robustness-with-interaction-analysis.R` creates table A4 (in the Appendix)
+- `09_robustness-with-shares-only.R` creates table table A5 (in the Appendix)
 
 Details of which script produces which table and figure are also documented at the beginning of each script.

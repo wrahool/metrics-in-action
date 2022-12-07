@@ -1,4 +1,4 @@
-# This script produces Table A1 and Figures A2 and A3
+# this script produces Figures A2 and A3 in the Appendix.
 
 library(rjson)
 library(tidyverse)
@@ -12,22 +12,24 @@ library(ggtext)
 library(cowplot)
 library(ggrepel)
 library(ggpubr)
+library(plm)
 
-# set correct path to folder with all CSV files
-# data_folder <- "/path/to/data/folder/"
 
-# read aggregated data
-model_tbl <- read_csv(glue(data_folder, "aggregated_data-10_periods-window-1.csv"))
+# set lag and window size
+lag <- 1 # in days
+window_size <- 1 # in days
+start_season <- 1
+end_season <- 10
+all_seasons <- start_season:end_season
 
-# read handcoded files
-topic_entertainment <- read_csv(glue(data_folder, "topic_entertainment_10.csv"))
-topic_politics <- read_csv(glue(data_folder, "topic_politicization_handcode_10.csv"))
+agg_data_folder <- "C:/Users/Subhayan/Desktop/RnR code/model_data"
+model_tbl <- read_csv(glue("{agg_data_folder}/aggregated_data-10_periods-window-1.csv"))
 
-# read media details files
-media_details_tbl <- read_csv(glue(data_folder, "media_language.csv"))
-media_label_map <- read_csv(glue(data_folder, "media_label_map.csv"))
-media_ideology <- read_csv(glue(data_folder, "media_ideo.csv"))
+#SD of curr_topic_prop 
 
+sd(model_tbl$curr_topic_prop)
+
+# fit models
 
 m1 <- felm(curr_topic_prop  ~ log_eng_sig | 
              media_id + window + final_topic | 0 | media_id + window,
@@ -49,6 +51,9 @@ m5 <- felm(curr_topic_prop ~ log_eng_sig + last_topic_prop + last_topic_prop_all
              media_id + window + final_topic | 0 | media_id + window,
            data = model_tbl)
 
+topic_entertainment <- read_csv("auxiliary/topic_entertainment_10.csv")
+topic_politics <- read_csv("auxiliary/topic_politicization_handcode_10.csv")
+
 topic_politics <- topic_politics %>%
   arrange(season, topic) %>%
   rename(political = 3)%>%
@@ -58,7 +63,7 @@ topic_pol_ent <- topic_entertainment %>%
   inner_join(topic_politics, by = c("season", "topic"))
 
 topic_pol_ent <- topic_pol_ent %>%
-  mutate(topic_other = ifelse(entertainment == 0 & political == 0, 1, 0)) %>%
+  # mutate(topic_other = ifelse(entertainment == 0 & political == 0, 1, 0)) %>%
   mutate(topic_entertainment = ifelse(entertainment == 1, 1, 0)) %>%
   mutate(topic_political = ifelse(political == 2, 1, 0)) %>% 
   mutate(final_topic = glue("{season}_{topic}"))
@@ -67,9 +72,9 @@ topic_pol_ent <- topic_pol_ent %>%
 model_tbl <- model_tbl %>%
   inner_join(topic_pol_ent, by = "final_topic")
 
-m6 <- felm(curr_topic_prop ~ log_eng_sig * topic_other + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl)
+# m6 <- felm(curr_topic_prop ~ log_eng_sig * topic_other + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
+#              media_id + window + final_topic | 0 | media_id + window,
+#            data = model_tbl)
 
 m7 <- felm(curr_topic_prop ~ log_eng_sig * topic_political + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
              media_id + window + final_topic | 0 | media_id + window,
@@ -83,12 +88,8 @@ modelsummary(models = list(m2, m4, m5, m7),
 
 # outlet level
 
-to_exclude <- NULL
 m_coef_tbl <- NULL
 for(m_id in unique(model_tbl$media_id)) {
-  
-  if(m_id %in% to_exclude)
-    next
   
   message(m_id)
   m_m <- felm(curr_topic_prop  ~ log_eng_sig + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
@@ -135,6 +136,8 @@ for(m_id in unique(model_tbl$media_id)) {
     rbind(m_coef_tbl)
 }
 
+media_details_tbl <- read_csv("auxiliary/media_language.csv")
+
 m_coef_tbl <- m_coef_tbl %>%
   rename(n = 1, coeff = 2, p = 3, se = 4) %>%
   inner_join(media_details_tbl, by = "n") %>%
@@ -155,6 +158,8 @@ final_coef_tbl <- final_coef_tbl %>%
 final_coef_tbl <- final_coef_tbl %>%
   mutate(season = "All Seasons") %>%
   select(media, season, everything())
+
+media_label_map <- read_csv("auxiliary/media_label_map.csv")
 
 outlet_viz_tbl <- final_coef_tbl %>%
   inner_join(media_label_map, by = c("media" = "label")) %>%
@@ -180,7 +185,7 @@ outlet_viz_tbl <- outlet_viz_tbl %>%
 outlet_responsiveness_hor <- ggplot(outlet_viz_tbl) +
   geom_pointrange(aes(ymin = lower, ymax = upper, x = media_name, y = responsiveness)) +
   geom_hline(yintercept = 0, linetype = "dashed") +
-  lims(y = c(-0.0035, 0.007)) +
+  lims(y = c(-0.003, 0.01)) +
   labs(y = "Responsiveness", x = "Media outlet") +
   theme_bw() +
   scale_color_manual(values = c("black" = "black", "red" = "red")) +
@@ -188,6 +193,8 @@ outlet_responsiveness_hor <- ggplot(outlet_viz_tbl) +
         legend.position = "none")
 
 ## correlation with ideology
+
+media_ideology <- read_csv("auxiliary/media_ideo.csv")
 
 media_ideology <- media_ideology %>%
   inner_join(media_label_map) %>%
@@ -212,16 +219,13 @@ resp_ideo_scatterplot <- ggplot(resp_ideo_tbl, aes(x=ideo, y=responsiveness)) +
 plot_grid(plotlist = list(outlet_responsiveness_hor, resp_ideo_scatterplot),
           labels = LETTERS)
 
-ggsave("figures/figA1.svg", width = 10, height = 6, units = "in")
+ggsave("figures/figA2.svg", width = 10, height = 6, units = "in")
 
 # partisan topics
 
 m_coef_tbl <- NULL
 
 for(m_id in unique(model_tbl$media_id)) {
-  
-  if(m_id %in% to_exclude)
-    next
   
   message(m_id)
   m_m <- felm(curr_topic_prop  ~ log_eng_sig + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
@@ -280,9 +284,6 @@ m_coef_tbl <- NULL
 
 for(m_id in unique(model_tbl$media_id)) {
   
-  if(m_id %in% to_exclude)
-    next
-  
   message(m_id)
   m_m <- felm(curr_topic_prop  ~ log_eng_sig + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
                 window + final_topic | 0 | window,
@@ -336,7 +337,88 @@ entertainment_viz <- ggplot(entertainment_viz_tbl, aes(x=ideo, y=coeff)) +
 plot_grid(plotlist = list(partisan_viz, entertainment_viz),
           labels = LETTERS)
 
-ggsave("figures/figA2.svg", width = 10, height = 6, units = "in")
+ggsave("figures/figA3.svg", width = 10, height = 6, units = "in")
 
+
+# other topics
+
+# m_coef_tbl <- NULL
+# 
+# for(m_id in unique(model_tbl$media_id)) {
+#   
+#   if(m_id %in% to_exclude)
+#     next
+#   
+#   message(m_id)
+#   m_m <- felm(curr_topic_prop  ~ log_eng_sig + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
+#                 window + final_topic | 0 | window,
+#               data = model_tbl[model_tbl$media_id == m_id & model_tbl$entertainment != 1 & model_tbl$political != 2,])
+#   
+#   c <- m_m %>% 
+#     tidy() %>%
+#     filter(term == 'log_eng_sig') %>%
+#     pull(estimate)
+#   
+#   pv <- m_m %>% 
+#     tidy() %>%
+#     filter(term == 'log_eng_sig') %>%
+#     pull(p.value)
+#   
+#   se <- m_m %>%
+#     tidy() %>%
+#     filter(term == 'log_eng_sig') %>%
+#     pull(std.error)
+#   
+#   m_p_coef_tbl <- c(m_id, c, pv, se) %>%
+#     matrix() %>%
+#     t() %>%
+#     as_tibble()
+#   
+#   m_coef_tbl <- m_coef_tbl %>%
+#     rbind(m_p_coef_tbl)
+# }
+# 
+# other_viz_tbl <- m_coef_tbl %>%
+#   rename(n = 1, coeff = 2, pv = 3, se = 4) %>%
+#   mutate(n = as.numeric(n), coeff = as.numeric(coeff), pv = as.numeric(pv), se = as.numeric(se)) %>%
+#   inner_join(media_details_tbl, by = "n") %>%
+#   select(n, media, coeff, pv, se) %>%
+#   arrange(n) %>%
+#   inner_join(media_ideology, by = c("media" = "label")) %>%
+#   select(short_name, coeff, ideo)
+# 
+# other_viz <- ggplot(other_viz_tbl, aes(x=ideo, y=coeff)) +
+#   geom_point() +
+#   geom_text_repel(label = other_viz_tbl$short_name, col = "black",
+#                   # max.overlaps = 15, size = 3
+#   ) +
+#   geom_smooth(method = "lm", se = TRUE) +
+#   stat_cor(method = "pearson", digits = 3) +
+#   labs(x="ideology") +
+#   theme(strip.text.y = element_text(size = 30)) +
+#   labs(x = "Outlet slant", y = "Responsiveness") +
+#   theme_bw()
+# 
+# plot_grid(plotlist = list(partisan_viz, entertainment_viz, other_viz),
+#           labels = LETTERS)
+# 
+# partisan_viz_tbl <- partisan_viz_tbl %>%
+#   rename(partisan_resp = 2)
+# 
+# entertainment_viz_tbl <- entertainment_viz_tbl %>% 
+#   rename(entertainment_resp = 2)
+# 
+# other_viz_tbl <- other_viz_tbl %>% 
+#   rename(other_resp = 2)
+# 
+# all_resp <- partisan_viz_tbl %>%
+#   inner_join(entertainment_viz_tbl) %>% 
+#   inner_join(other_viz_tbl) %>% 
+#   rename(Media = 1) %>% 
+#   arrange(ideo) %>%
+#   select(Media, ideo, everything())
+# 
+# all_resp %>% 
+# write_csv("auxiliary/all_media_all_responsiveness.csv")
 
 

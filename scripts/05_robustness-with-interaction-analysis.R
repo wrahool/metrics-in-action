@@ -1,4 +1,4 @@
-# this creates Table A4
+# this script produces Table A5 in the Appendix.
 
 library(rjson)
 library(tidyverse)
@@ -14,21 +14,19 @@ library(ggrepel)
 library(ggpubr)
 library(plm)
 
-# set correct path to folder with all CSV files
-# data_folder <- "/path/to/data/folder/"
 
-# read aggregated data
-model_tbl <- read_csv(glue(data_folder, "aggregated_data-60_periods-window-1.csv"))
+# set lag and window size
+lag <- 1 # in days
+window_size <- 1 # in days
+start_season <- 1
+end_season <- 60
+all_seasons <- start_season:end_season
 
-# read handcoded files
-topic_entertainment <- read_csv(glue(data_folder, "topic_entertainment_60.csv"))
-topic_politics <- read_csv(glue(data_folder, "topic_politicization_handcode_60.csv"))
+agg_data_folder <- "C:/Users/Subhayan/Desktop/RnR code/model_data"
+model_tbl <- read_csv(glue("{agg_data_folder}/aggregated_data-60_periods-window-1.csv"))
 
-# read media details files
-media_details_tbl <- read_csv(glue(data_folder, "media_language.csv"))
-media_label_map <- read_csv(glue(data_folder, "media_label_map.csv"))
-media_ideology <- read_csv(glue(data_folder, "media_ideo.csv"))
-media_ideology2 <- read_csv(glue(data_folder, "media_ideo2.csv"))
+topic_entertainment <- read_csv("auxiliary/topic_entertainment_60.csv")
+topic_politics <- read_csv("auxiliary/topic_politicization_handcode_60.csv")
 
 topic_politics <- topic_politics %>%
   arrange(season, topic) %>%
@@ -52,6 +50,12 @@ model_tbl <- model_tbl %>%
 #              media_id + window + final_topic | 0 | media_id + window,
 #            data = model_tbl)
 
+
+media_details_tbl <- read_csv("auxiliary/media_language.csv")
+media_ideology <- read_csv("auxiliary/media_ideo.csv")
+media_ideology2 <- read_csv("auxiliary/media_ideo2.csv")
+media_label_map <- read_csv("auxiliary/media_label_map.csv")
+
 media_ideology$ideo <- scale(media_ideology$ideo)
 media_ideology2$ideo <- scale(media_ideology2$ideo)
 
@@ -74,7 +78,7 @@ sum(!unique(model_tbl$media_id) %in% unique(media_ideology$n)) == 0
 
 model_tbl <- model_tbl %>%
   inner_join(media_ideology, by = c("media_id" = "n"))
-  
+
 
 m8 <- felm(curr_topic_prop ~ log_eng_sig * ideo1 + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
              media_id + window + final_topic | 0 | media_id + window,
@@ -89,15 +93,12 @@ m10 <- felm(curr_topic_prop  ~ log_eng_sig * ideo1 + last_topic_prop + last_topi
             data = model_tbl[ model_tbl$political == 2,])
 
 m11 <- felm(curr_topic_prop  ~ log_eng_sig * ideo2 + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
-             media_id + window + final_topic | 0 | media_id + window,
-           data = model_tbl[ model_tbl$political == 2,])
+              media_id + window + final_topic | 0 | media_id + window,
+            data = model_tbl[ model_tbl$political == 2,])
 
 
 modelsummary(models = list("M1 Partisan Topics" = m10, "M2 Partisan Topics" = m11),
              output = "gt", stars = TRUE, statistic = c("std.error"), fmt = 4,
              coef_omit = "^topic") %>%
-  gtsave(filename = "results/tableA4.tex")
-
-
-
-
+  gtsave(filename = glue("results/JOC/seasonal/{params$n_seasons}-seasons/models/overleaf/",
+                         "tableA4.tex"))

@@ -1,0 +1,778 @@
+n,file_name,media_set,media,lang
+1,1_100_Percent_FED_Up.csv,1,100 Percent FED Up,en
+2,1_10TV_-_WBNS.csv,1,10TV - WBNS,en
+3,1_11Alive.csv,1,11Alive,en
+4,1_12up.csv,1,12up,en
+5,1_12_News.csv,1,12 News,en
+6,1_13News_Now_-_WVEC.csv,1,13News Now - WVEC,en
+7,1_13_WMAZ.csv,1,13 WMAZ,en
+8,1_6abc_Action_News.csv,1,6abc Action News,en
+9,1_9NEWS_-KUSA-.csv,1,9NEWS (KUSA),en
+10,1_ABC11_WTVD.csv,1,ABC11 WTVD,en
+11,1_ABC13_Houston.csv,1,ABC13 Houston,en
+12,1_ABC7.csv,1,ABC7,en
+13,1_ABC7NY.csv,1,ABC7NY,en
+14,1_ABC7_News.csv,1,ABC7 News,en
+15,1_ABC_7_Chicago.csv,1,ABC 7 Chicago,en
+16,1_ABC_Australia.csv,1,ABC Australia,en
+17,1_ABC_News.csv,1,ABC News,en
+18,1_ACLJ.csv,1,ACLJ,en
+19,1_Activist_Post.csv,1,Activist Post,en
+20,1_Adweek.csv,1,Adweek,en
+21,1_Ad_Age.csv,1,Ad Age,en
+22,1_Against_Crony_Capitalism.csv,1,Against Crony Capitalism,en
+23,1_AJC.csv,1,AJC,en
+24,1_al-com.csv,1,al.com,en
+25,1_Albuquerque_Journal.csv,1,Albuquerque Journal,en
+26,1_Algemeiner.csv,1,Algemeiner,en
+27,1_Alltop.csv,1,Alltop,en
+28,1_AlterNet.csv,1,AlterNet,en
+29,1_Al_Jazeera_English.csv,1,Al Jazeera English,en
+30,1_American_Freedom_Fighters.csv,1,American Freedom Fighters,en
+31,1_American_Thinker.csv,1,American Thinker,en
+32,1_Ammoland_Shooting_Sports_News.csv,1,Ammoland Shooting Sports News,en
+33,1_Anchorage_Daily_News.csv,1,Anchorage Daily News,en
+34,1_Anonhq-com-.csv,1,Anonhq.com/,en
+35,1_AOL.csv,1,AOL,en
+36,1_AP.csv,1,AP,en
+37,1_Argus_Leader_Media.csv,1,Argus Leader Media,en
+38,1_Arkansas_Democrat-Gazette_-_ArkansasOnline-com.csv,1,Arkansas Democrat-Gazette / ArkansasOnline.com,en
+39,1_Army_Times.csv,1,Army Times,en
+40,1_Atlanta_Black_Star.csv,1,Atlanta Black Star,en
+41,1_Austin_Chronicle.csv,1,Austin Chronicle,en
+42,1_A_Plus.csv,1,A Plus,en
+43,1_The_Advocate.csv,1,The Advocate,en
+44,1_The_Asbury_Park_Press.csv,1,The Asbury Park Press,en
+45,1_The_Aspen_Times.csv,1,The Aspen Times,en
+46,2_2nd_Amendment.csv,2,2nd Amendment,en
+47,2_azcentral.csv,2,azcentral,en
+48,2_azfamily_3TV_CBS_5.csv,2,azfamily 3TV CBS 5,en
+49,2_BabaMail.csv,2,BabaMail,en
+50,2_BBC_News.csv,2,BBC News,en
+51,2_Before_It-s_News.csv,2,Before It's News,en
+52,2_Belfast_Telegraph.csv,2,Belfast Telegraph,en
+53,2_Belleville_News-Democrat.csv,2,Belleville News-Democrat,en
+54,2_Bill_Moyers.csv,2,Bill Moyers,en
+55,2_Bill_O-Reilly.csv,2,Bill O'Reilly,en
+56,2_Bipartisan_Report.csv,2,Bipartisan Report,en
+57,2_BizPac_Review.csv,2,BizPac Review,en
+58,2_BlackAmericaWeb-com.csv,2,BlackAmericaWeb.com,en
+59,2_Bloomberg.csv,2,Bloomberg,en
+60,2_Boing_Boing.csv,2,Boing Boing,en
+61,2_Boston-com.csv,2,Boston.com,en
+62,2_Boston_Herald.csv,2,Boston Herald,en
+63,2_Bradenton_Herald.csv,2,Bradenton Herald,en
+64,2_Breitbart.csv,2,Breitbart,en
+65,2_Burlington_Free_Press.csv,2,Burlington Free Press,en
+66,2_Business_Insider.csv,2,Business Insider,en
+67,2_Business_Standard.csv,2,Business Standard,en
+68,2_BuzzFeed.csv,2,BuzzFeed,en
+69,2_C-SPAN.csv,2,C-SPAN,en
+70,2_Campus_Reform.csv,2,Campus Reform,en
+71,2_Catholic_News_Agency.csv,2,Catholic News Agency,en
+72,2_CBS_Local.csv,2,CBS Local,en
+73,2_CBS_News.csv,2,CBS News,en
+74,2_Centre_Daily_Times.csv,2,Centre Daily Times,en
+75,2_Charisma_News.csv,2,Charisma News,en
+76,2_Chicago_Reader.csv,2,Chicago Reader,en
+77,2_Chicago_Tribune.csv,2,Chicago Tribune,en
+78,2_Chicks_On_The_Right.csv,2,Chicks On The Right,en
+79,2_Christian_News_Network.csv,2,Christian News Network,en
+80,2_Israel365_News.csv,2,Israel365 News,en
+81,2_Spectrum_Bay_News_9.csv,2,Spectrum Bay News 9,en
+82,2_The_Baltimore_Sun.csv,2,The Baltimore Sun,en
+83,2_The_Bangor_Daily_News.csv,2,The Bangor Daily News,en
+84,2_The_Bellingham_Herald.csv,2,The Bellingham Herald,en
+85,2_The_Bismarck_Tribune.csv,2,The Bismarck Tribune,en
+86,2_The_Boston_Globe.csv,2,The Boston Globe,en
+87,2_The_Brookings_Institution.csv,2,The Brookings Institution,en
+88,2_The_Buffalo_News.csv,2,The Buffalo News,en
+89,2_The_Business_Journals.csv,2,The Business Journals,en
+90,2_The_Canton_Repository_-_CantonRep-com.csv,2,The Canton Repository / CantonRep.com,en
+91,2_The_Christian_Broadcasting_Network.csv,2,The Christian Broadcasting Network,en
+92,3_Asheville_Citizen_Times.csv,3,Asheville Citizen Times,en
+93,3_Christian_Post.csv,3,Christian Post,en
+94,3_Chron.csv,3,Chron,en
+95,3_Chronicle_of_Higher_Education.csv,3,Chronicle of Higher Education,en
+96,3_City_Pages_Minneapolis.csv,3,City Pages Minneapolis,en
+97,3_Clarion_Ledger.csv,3,Clarion Ledger,en
+98,3_Clash_Briefing.csv,3,Clash Briefing,en
+99,3_cleveland-com.csv,3,cleveland.com,en
+100,3_ClickHole.csv,3,ClickHole,en
+101,3_CNBC.csv,3,CNBC,en
+102,3_CNET.csv,3,CNET,en
+103,3_CNN.csv,3,CNN,en
+104,3_CNSNews-com.csv,3,CNSNews.com,en
+105,3_COED.csv,3,COED,en
+106,3_Collective_Evolution.csv,3,Collective Evolution,en
+107,3_Columbia_Journalism_Review.csv,3,Columbia Journalism Review,en
+108,3_CommonDreams.csv,3,CommonDreams,en
+109,3_Complex.csv,3,Complex,en
+110,3_Connecticut_Post.csv,3,Connecticut Post,en
+111,3_ConservativeNewsandViews-com.csv,3,ConservativeNewsandViews.com,en
+112,3_Conservative_Post.csv,3,Conservative Post,en
+113,3_Conservative_Refocus.csv,3,Conservative Refocus,en
+114,3_Conservative_Review.csv,3,Conservative Review,en
+115,3_Conservative_Tribune_by_WJ.csv,3,Conservative Tribune by WJ,en
+116,3_Consortiumnews-com.csv,3,Consortiumnews.com,en
+117,3_Cosmopolitan.csv,3,Cosmopolitan,en
+118,3_Courier-Post.csv,3,Courier-Post,en
+119,3_Crain-s_New_York_Business.csv,3,Crain's New York Business,en
+120,3_Crooks_and_Liars.csv,3,Crooks and Liars,en
+121,3_Daily_Breeze.csv,3,Daily Breeze,en
+122,3_Daily_Camera.csv,3,Daily Camera,en
+123,3_Daily_Herald_Chicago.csv,3,Daily Herald Chicago,en
+124,3_Daily_Kos.csv,3,Daily Kos,en
+125,3_Daily_Mulligan.csv,3,Daily Mulligan,en
+126,3_Daily_Press_Virginia.csv,3,Daily Press Virginia,en
+127,3_Daily_Record.csv,3,Daily Record,en
+128,3_Enquirer_-_Cincinnati_and_Kentucky.csv,3,Enquirer - Cincinnati and Kentucky,en
+129,3_Hartford_Courant.csv,3,Hartford Courant,en
+130,3_KPRC2_-_Click2Houston.csv,3,KPRC2 / Click2Houston,en
+131,3_Los_Angeles_Daily_News.csv,3,Los Angeles Daily News,en
+132,3_The_Christian_Science_Monitor.csv,3,The Christian Science Monitor,en
+133,3_The_Coloradoan.csv,3,The Coloradoan,en
+134,3_The_Columbian.csv,3,The Columbian,en
+135,3_The_Commercial_Appeal.csv,3,The Commercial Appeal,en
+136,3_The_Daily_Caller.csv,3,The Daily Caller,en
+137,3_The_Daily_Dot.csv,3,The Daily Dot,en
+138,3_The_Daily_Signal.csv,3,The Daily Signal,en
+139,3_Topeka_Capital-Journal.csv,3,Topeka Capital-Journal,en
+140,3_WDIV_Local_4_-_ClickOnDetroit.csv,3,WDIV Local 4 / ClickOnDetroit,en
+141,4_Ashland_Tidings.csv,4,Ashland Tidings,en
+142,4_Daily_Star.csv,4,Daily Star,en
+143,4_Daily_Surge.csv,4,Daily Surge,en
+144,4_Daily_Voice_Bergen_County.csv,4,Daily Voice Bergen County,en
+145,4_Daily_Wire.csv,4,Daily Wire,en
+146,4_Dallas_Observer.csv,4,Dallas Observer,en
+147,4_DeadState.csv,4,DeadState,en
+148,4_Delaware_Online.csv,4,Delaware Online,en
+149,4_Delmarva_Now_-_Daily_Times.csv,4,Delmarva Now - Daily Times,en
+150,4_Democracy_Now-.csv,4,Democracy Now!,en
+151,4_Democrat_and_Chronicle.csv,4,Democrat and Chronicle,en
+152,4_Deseret_News.csv,4,Deseret News,en
+153,4_Detroit_News.csv,4,Detroit News,en
+154,4_Digg.csv,4,Digg,en
+155,4_Digital_Journal.csv,4,Digital Journal,en
+156,4_Diply.csv,4,Diply,en
+157,4_DiversityInc.csv,4,DiversityInc,en
+158,4_Dow_Jones.csv,4,Dow Jones,en
+159,4_Duffel_Blog.csv,4,Duffel Blog,en
+160,4_Duluth_News_Tribune.csv,4,Duluth News Tribune,en
+161,4_DW_News.csv,4,DW News,en
+162,4_E-_News.csv,4,E! News,en
+163,4_Eagle_Rising.csv,4,Eagle Rising,en
+164,4_East_Bay_Times.csv,4,East Bay Times,en
+165,4_EcoWatch.csv,4,EcoWatch,en
+166,4_Education_Week.csv,4,Education Week,en
+167,4_Elite_Daily.csv,4,Elite Daily,en
+168,4_El_Nuevo_Da.csv,4,El Nuevo Día,es
+169,4_Empire_News.csv,4,Empire News,en
+170,4_End_Time_Headlines.csv,4,End Time Headlines,en
+171,4_Entertainment_Weekly.csv,4,Entertainment Weekly,en
+172,4_Esquire.csv,4,Esquire,en
+173,4_Euronews_English.csv,4,Euronews English,en
+174,4_FactCheck-org.csv,4,FactCheck.org,en
+175,4_Fast_Company.csv,4,Fast Company,en
+176,4_San_Antonio_Express-News.csv,4,San Antonio Express-News,en
+177,4_The_Columbus_Dispatch.csv,4,The Columbus Dispatch,en
+178,4_The_D-C-_Clothesline.csv,4,The D.C. Clothesline,en
+179,4_The_Dallas_Morning_News.csv,4,The Dallas Morning News,en
+180,4_The_Denver_Post.csv,4,The Denver Post,en
+181,4_The_Des_Moines_Register.csv,4,The Des Moines Register,en
+182,4_The_Drudge_Report.csv,4,The Drudge Report,en
+183,4_The_Durango_Herald.csv,4,The Durango Herald,en
+184,4_The_Eagle-Tribune.csv,4,The Eagle-Tribune,en
+185,4_The_Economist.csv,4,The Economist,en
+186,4_The_Electronic_Intifada.csv,4,The Electronic Intifada,en
+187,4_The_Enterprise_of_Brockton.csv,4,The Enterprise of Brockton,en
+188,5_Detroit_Free_Press.csv,5,Detroit Free Press,en
+189,5_Filming_Cops.csv,5,Filming Cops,en
+190,5_Financial_Times.csv,5,Financial Times,en
+191,5_Firehouse-com.csv,5,Firehouse.com,en
+192,5_First_Coast_News.csv,5,First Coast News,en
+193,5_First_Things.csv,5,First Things,en
+194,5_First_To_Know.csv,5,First To Know,en
+195,5_FiveThirtyEight.csv,5,FiveThirtyEight,en
+196,5_Florida_Today.csv,5,Florida Today,en
+197,5_Forbes.csv,5,Forbes,en
+198,5_Foreign_Policy.csv,5,Foreign Policy,en
+199,5_Fortune.csv,5,Fortune,en
+200,5_Fox2Now.csv,5,Fox2Now,en
+201,5_FOX4_News_Kansas_City.csv,5,FOX4 News Kansas City,en
+202,5_FOX59_News.csv,5,FOX59 News,en
+203,5_FOX6_News_Milwaukee.csv,5,FOX6 News Milwaukee,en
+204,5_FOX_10_Phoenix.csv,5,FOX 10 Phoenix,en
+205,5_FOX_13_News.csv,5,FOX 13 News,en
+206,5_FOX_13_News_-_Tampa_Bay.csv,5,FOX 13 News - Tampa Bay,en
+207,5_FOX_2_Detroit.csv,5,FOX 2 Detroit,en
+208,5_Fox_32_Chicago.csv,5,Fox 32 Chicago,en
+209,5_FOX_4_News.csv,5,FOX 4 News,en
+210,5_FOX_5_-_Fox5NY-com.csv,5,FOX 5 / Fox5NY.com,en
+211,5_Fox_8_News.csv,5,Fox 8 News,en
+212,5_Fox_9.csv,5,Fox 9,en
+213,5_Fox_Business.csv,5,Fox Business,en
+214,5_Fox_Carolina_News.csv,5,Fox Carolina News,en
+215,5_Fox_News.csv,5,Fox News,en
+216,5_FreeRepublic.csv,5,FreeRepublic,en
+217,5_FrontPage_Magazine.csv,5,FrontPage Magazine,en
+218,5_Funker530_-_Combat_Footage.csv,5,Funker530 - Combat Footage,en
+219,5_Funny_Or_Die.csv,5,Funny Or Die,en
+220,5_Fusion_TV.csv,5,Fusion TV,en
+221,5_Gawker.csv,5,Gawker,en
+222,5_Gizmodo.csv,5,Gizmodo,en
+223,5_Glenn_Beck.csv,5,Glenn Beck,en
+224,5_Global_Grind.csv,5,Global Grind,en
+225,5_GOOD.csv,5,GOOD,en
+226,5_Pamela_Geller.csv,5,Pamela Geller,en
+227,5_The_Fayetteville_Observer.csv,5,The Fayetteville Observer,en
+228,5_The_Financial_Express.csv,5,The Financial Express,en
+229,5_The_Fresno_Bee.csv,5,The Fresno Bee,en
+230,5_The_Gainesville_Sun.csv,5,The Gainesville Sun,en
+231,5_The_Gaston_Gazette.csv,5,The Gaston Gazette,en
+232,5_The_Gazette.csv,5,The Gazette,en
+233,5_Washington_Free_Beacon.csv,5,Washington Free Beacon,en
+234,5_WBFF_FOX_45.csv,5,WBFF FOX 45,en
+235,6_Daily_Herald_Utah_Valley.csv,6,Daily Herald Utah Valley,en
+236,6_Gothamist.csv,6,Gothamist,en
+237,6_Governing.csv,6,Governing,en
+238,6_Grabien.csv,6,Grabien,en
+239,6_Grand_Forks_Herald.csv,6,Grand Forks Herald,en
+240,6_Greeley_Tribune.csv,6,Greeley Tribune,en
+241,6_Green_Bay_Press-Gazette.csv,6,Green Bay Press-Gazette,en
+242,6_Greg_Palast.csv,6,Greg Palast,en
+243,6_Grist-org.csv,6,Grist.org,en
+244,6_Guardian_Liberty_Voice.csv,6,Guardian Liberty Voice,en
+245,6_Guff_UK.csv,6,Guff UK,en
+246,6_Haaretz-com.csv,6,Haaretz.com,en
+247,6_Harper-s_Magazine.csv,6,Harper's Magazine,en
+248,6_Harvard_Business_Review.csv,6,Harvard Business Review,en
+249,6_Havelock_News.csv,6,Havelock News,en
+250,6_Headlines_and_Global_News.csv,6,Headlines and Global News,en
+251,6_Heavy-com.csv,6,Heavy.com,en
+252,6_Herald-Tribune_Media_Group.csv,6,Herald-Tribune Media Group,en
+253,6_Herman_Cain.csv,6,Herman Cain,en
+254,6_High_Times.csv,6,High Times,en
+255,6_HistoryNet.csv,6,HistoryNet,en
+256,6_Hot_Air.csv,6,Hot Air,en
+257,6_Houston_Press.csv,6,Houston Press,en
+258,6_HuffPost.csv,6,HuffPost,en
+259,6_Human_Events.csv,6,Human Events,en
+260,6_Human_Rights_Watch.csv,6,Human Rights Watch,en
+261,6_Huzlers.csv,6,Huzlers,en
+262,6_Idaho_Statesman.csv,6,Idaho Statesman,en
+263,6_IFLScience.csv,6,IFLScience,en
+264,6_If_You_Only_News.csv,6,If You Only News,en
+265,6_IJR.csv,6,IJR,en
+266,6_Inc-_Magazine.csv,6,Inc. Magazine,en
+267,6_IndyStar.csv,6,IndyStar,en
+268,6_InForum.csv,6,InForum,en
+269,6_Inman_News.csv,6,Inman News,en
+270,6_InStyle.csv,6,InStyle,en
+271,6_International_Business_Times_UK.csv,6,International Business Times UK,en
+272,6_Investor-s_Business_Daily.csv,6,Investor's Business Daily,en
+273,6_News_-_Record.csv,6,News & Record,en
+274,6_Philadelphia_Inquirer.csv,6,Philadelphia Inquirer,en
+275,6_Sean_Hannity.csv,6,Sean Hannity,en
+276,6_The_Greenville_News.csv,6,The Greenville News,en
+277,6_The_Hutchinson_News.csv,6,The Hutchinson News,en
+278,6_The_Independent.csv,6,The Independent,en
+279,6_The_Inquisitr.csv,6,The Inquisitr,en
+280,6_The_Island_Packet.csv,6,The Island Packet,en
+281,7_Arutz_Sheva_-_Israel_National_News.csv,7,Arutz Sheva - Israel National News,en
+282,7_FOX31_KDVR-com.csv,7,FOX31 KDVR.com,en
+283,7_FOX_12_Oregon.csv,7,FOX 12 Oregon,en
+284,7_Israel_Video_Network.csv,7,Israel Video Network,en
+285,7_ITV_News.csv,7,ITV News,en
+286,7_Jewish_World_Review.csv,7,Jewish World Review,en
+287,7_Jezebel.csv,7,Jezebel,en
+288,7_Jihad_Watch.csv,7,Jihad Watch,en
+289,7_Journal_-_Courier.csv,7,Journal & Courier,en
+290,7_Judicial_Watch.csv,7,Judicial Watch,en
+291,7_Kane_County_Chronicle.csv,7,Kane County Chronicle,en
+292,7_KARE_11.csv,7,KARE 11,en
+293,7_KATC-TV_3-_Acadiana-s_Newschannel.csv,7,KATC-TV 3: Acadiana's Newschannel,en
+294,7_KCRA_3.csv,7,KCRA 3,en
+295,7_KCTV5_News_Kansas_City.csv,7,KCTV5 News Kansas City,en
+296,7_KENS_5_-_Kens5-com.csv,7,KENS 5 & Kens5.com,en
+297,7_Kentucky-com.csv,7,Kentucky.com,en
+298,7_KFOR-TV.csv,7,KFOR-TV,en
+299,7_KGW-TV.csv,7,KGW-TV,en
+300,7_KHOU_11_News.csv,7,KHOU 11 News,en
+301,7_KHQ_Local_News.csv,7,KHQ Local News,en
+302,7_KING_5.csv,7,KING 5,en
+303,7_Kinston_Free_Press.csv,7,Kinston Free Press,en
+304,7_KIRO_7_News.csv,7,KIRO 7 News,en
+305,7_KLTV_7.csv,7,KLTV 7,en
+306,7_KMBC_9.csv,7,KMBC 9,en
+307,7_KMOV.csv,7,KMOV,en
+308,7_Knoxville_News_Sentinel.csv,7,Knoxville News Sentinel,en
+309,7_KOCO_5_News.csv,7,KOCO 5 News,en
+310,7_KOMO_News.csv,7,KOMO News,en
+311,7_KREM_2_News.csv,7,KREM 2 News,en
+312,7_KRON_4_News.csv,7,KRON 4 News,en
+313,7_KRQE_News_13.csv,7,KRQE News 13,en
+314,7_KSBW_TV_Action_News_8.csv,7,KSBW TV Action News 8,en
+315,7_KSDK_News.csv,7,KSDK News,en
+316,7_KSL-com.csv,7,KSL.com,en
+317,7_KTLA_5_News.csv,7,KTLA 5 News,en
+318,7_Lincoln_Journal_Star.csv,7,Lincoln Journal Star,en
+319,7_Milwaukee_Journal_Sentinel.csv,7,Milwaukee Journal Sentinel,en
+320,7_Region_8_News.csv,7,Region 8 News,en
+321,7_The_Daily_News.csv,7,The Daily News,en
+322,7_The_Florida_Times-Union.csv,7,The Florida Times-Union,en
+323,7_The_Jerusalem_Post_-_JPost-com.csv,7,The Jerusalem Post / JPost.com,en
+324,7_The_Jewish_Press.csv,7,The Jewish Press,en
+325,7_The_Kansas_City_Star.csv,7,The Kansas City Star,en
+326,7_Wichita_Eagle.csv,7,Wichita Eagle,en
+327,7_Winston-Salem_Journal_-_JournalNow.csv,7,Winston-Salem Journal | JournalNow,en
+328,7__-joongangilbo-.csv,7,중앙일보 (joongangilbo),ko
+329,8_B-_Scott.csv,8,B. Scott,en
+330,8_Daily_Mail.csv,8,Daily Mail,en
+331,8_KTVB.csv,8,KTVB,en
+332,8_KVUE.csv,8,KVUE,en
+333,8_KXAN_News.csv,8,KXAN News,en
+334,8_Lansing_State_Journal.csv,8,Lansing State Journal,en
+335,8_Las_Vegas_Sun.csv,8,Las Vegas Sun,en
+336,8_Lawrence_Journal-World.csv,8,Lawrence Journal-World,en
+337,8_Law_-_Crime.csv,8,Law & Crime,en
+338,8_La_Crosse_Tribune.csv,8,La Crosse Tribune,en
+339,8_Ledger-Enquirer.csv,8,Ledger-Enquirer,en
+340,8_Legal_Insurrection.csv,8,Legal Insurrection,en
+341,8_lehighvalleylive-com.csv,8,lehighvalleylive.com,en
+342,8_LGBTQ_Nation.csv,8,LGBTQ Nation,en
+343,8_Liberal_America.csv,8,Liberal America,en
+344,8_Lifehacker.csv,8,Lifehacker,en
+345,8_LifeNews-com.csv,8,LifeNews.com,en
+346,8_LifeSiteNews_Catholic.csv,8,LifeSiteNews Catholic,en
+347,8_LifeZette.csv,8,LifeZette,en
+348,8_LiveLeak.csv,8,LiveLeak,en
+349,8_Liverpool_Echo_News.csv,8,Liverpool Echo News,en
+350,8_Live_Action.csv,8,Live Action,en
+351,8_LNP_-_LancasterOnline.csv,8,LNP + LancasterOnline,en
+352,8_lohud.csv,8,lohud,en
+353,8_Los_Angeles_Times.csv,8,Los Angeles Times,en
+354,8_Louder_with_Crowder.csv,8,Louder with Crowder,en
+355,8_Lubbock_Avalanche-Journal.csv,8,Lubbock Avalanche-Journal,en
+356,8_Madame_Noire.csv,8,Madame Noire,en
+357,8_madison-com.csv,8,madison.com,en
+358,8_Mad_World_News.csv,8,Mad World News,en
+359,8_MaineToday.csv,8,MaineToday,en
+360,8_Manchester_Evening_News.csv,8,Manchester Evening News,en
+361,8_Marine_Corps_Times.csv,8,Marine Corps Times,en
+362,8_MarketWatch.csv,8,MarketWatch,en
+363,8_Mashable.csv,8,Mashable,en
+364,8_McClatchyDC.csv,8,McClatchyDC,en
+365,8_Mediaite.csv,8,Mediaite,en
+366,8_MediaPost.csv,8,MediaPost,en
+367,8_Media_Matters_for_America.csv,8,Media Matters for America,en
+368,8_Medium.csv,8,Medium,en
+369,8_Metro.csv,8,Metro,en
+370,8_Metro_US_News.csv,8,Metro US News,en
+371,8_Mint.csv,8,Mint,en
+372,8_The_Morning_Call.csv,8,The Morning Call,en
+373,8_The_Telegraph_-_macon-com.csv,8,The Telegraph & macon.com,en
+374,8_Unbranded_News_Viral.csv,8,Unbranded News Viral,en
+375,8_WPLG_Local_10.csv,8,WPLG Local 10,en
+376,9_Daily_Mirror.csv,9,Daily Mirror,en
+377,9_Detroit_Metro_Times.csv,9,Detroit Metro Times,en
+378,9_FOX8.csv,9,FOX8,en
+379,9_MetroWest_Daily_News.csv,9,MetroWest Daily News,en
+380,9_Miami_Herald.csv,9,Miami Herald,en
+381,9_Mic.csv,9,Mic,en
+382,9_Michigan-com.csv,9,Michigan.com,en
+383,9_Middle_East_Monitor.csv,9,Middle East Monitor,en
+384,9_Milford_Daily_News.csv,9,Milford Daily News,en
+385,9_Military-com.csv,9,Military.com,en
+386,9_Military_Times.csv,9,Military Times,en
+387,9_MLive-com.csv,9,MLive.com,en
+388,9_Mondoweiss.csv,9,Mondoweiss,en
+389,9_Monroe_News.csv,9,Monroe News,en
+390,9_Moonbattery.csv,9,Moonbattery,en
+391,9_Morning_News_USA.csv,9,Morning News USA,en
+392,9_Mother_Jones.csv,9,Mother Jones,en
+393,9_MRCTV.csv,9,MRCTV,en
+394,9_MSNBC.csv,9,MSNBC,en
+395,9_MSN_News.csv,9,MSN News,en
+396,9_Naples_Daily_News.csv,9,Naples Daily News,en
+397,9_National_Journal.csv,9,National Journal,en
+398,9_National_Report.csv,9,National Report,en
+399,9_National_Review.csv,9,National Review,en
+400,9_NationofChange.csv,9,NationofChange,en
+401,9_Navy_Times.csv,9,Navy Times,en
+402,9_NBC10_Philadelphia.csv,9,NBC10 Philadelphia,en
+403,9_NBC_6.csv,9,NBC 6,en
+404,9_NBC_7_San_Diego.csv,9,NBC 7 San Diego,en
+405,9_NBC_Bay_Area.csv,9,NBC Bay Area,en
+406,9_NBC_Chicago.csv,9,NBC Chicago,en
+407,9_NBC_Connecticut.csv,9,NBC Connecticut,en
+408,9_NBC_DFW.csv,9,NBC DFW,en
+409,9_NBC_LA.csv,9,NBC LA,en
+410,9_NBC_News.csv,9,NBC News,en
+411,9_NBC_New_York.csv,9,NBC New York,en
+412,9_NBC_Washington.csv,9,NBC Washington,en
+413,9_NewNowNext.csv,9,NewNowNext,en
+414,9_News_12_New_Jersey.csv,9,News 12 New Jersey,en
+415,9_Spectrum_News_13.csv,9,Spectrum News 13,en
+416,9_The_Mercury_News.csv,9,The Mercury News,en
+417,9_The_Modesto_Bee.csv,9,The Modesto Bee,en
+418,9_The_New_Bern_Sun_Journal.csv,9,The New Bern Sun Journal,en
+419,9_The_New_Republic.csv,9,The New Republic,en
+420,9_The_Sun_News.csv,9,The Sun News,en
+421,9_WLBT_3_On_Your_Side.csv,9,WLBT 3 On Your Side,en
+422,10_Akron_Beacon_Journal.csv,10,Akron Beacon Journal,en
+423,10_Daytona_Beach_News-Journal.csv,10,Daytona Beach News-Journal,en
+424,10_KOKH_FOX_25_News-_Oklahoma.csv,10,"KOKH FOX 25 News, Oklahoma",en
+425,10_KWTV_-_NEWS_9.csv,10,KWTV - NEWS 9,en
+426,10_news-com-au.csv,10,news.com.au,en
+427,10_NewsBusters-org.csv,10,NewsBusters.org,en
+428,10_NewsChannel10.csv,10,NewsChannel10,en
+429,10_Newsday.csv,10,Newsday,en
+430,10_Newsmax.csv,10,Newsmax,en
+431,10_NewsNow.csv,10,NewsNow,en
+432,10_NewsOK.csv,10,NewsOK,en
+433,10_NewsOne.csv,10,NewsOne,en
+434,10_Newspapers-com.csv,10,Newspapers.com,en
+435,10_Newsweek.csv,10,Newsweek,en
+436,10_News_Corp_Australia.csv,10,News Corp Australia,en
+437,10_New_Haven_Register.csv,10,New Haven Register,en
+438,10_New_Statesman.csv,10,New Statesman,en
+439,10_New_York_Daily_News.csv,10,New York Daily News,en
+440,10_New_York_Magazine.csv,10,New York Magazine,en
+441,10_New_York_Post.csv,10,New York Post,en
+442,10_Nieman_Journalism_Lab.csv,10,Nieman Journalism Lab,en
+443,10_NJ-com.csv,10,NJ.com,en
+444,10_NOLA-com.csv,10,NOLA.com,en
+445,10_Noozley-com.csv,10,Noozley.com,en
+446,10_NorthJersey-com.csv,10,NorthJersey.com,en
+447,10_Northwest_Florida_Daily_News.csv,10,Northwest Florida Daily News,en
+448,10_Now_The_End_Begins.csv,10,Now The End Begins,en
+449,10_NPR.csv,10,NPR,en
+450,10_NumbersUSA.csv,10,NumbersUSA,en
+451,10_Observer.csv,10,Observer,en
+452,10_Ocala-News-com.csv,10,Ocala-News.com,en
+453,10_Occupy_Democrats.csv,10,Occupy Democrats,en
+454,10_Omaha_World-Herald.csv,10,Omaha World-Herald,en
+455,10_OMGFacts.csv,10,OMGFacts,en
+456,10_One_America_News_Network.csv,10,One America News Network,en
+457,10_One_News_Now.csv,10,One News Now,en
+458,10_One_News_Page.csv,10,One News Page,en
+459,10_Orange_County_Register.csv,10,Orange County Register,en
+460,10_Panama_City_News_Herald.csv,10,Panama City News Herald,en
+461,10_The_News-Gazette.csv,10,The News-Gazette,en
+462,10_The_News-Press_-Fort_Myers_and_Cape_Coral-.csv,10,The News-Press (Fort Myers and Cape Coral),en
+463,10_The_News-Times.csv,10,The News-Times,en
+464,10_The_News_-_Advance.csv,10,The News & Advance,en
+465,10_The_News_-_Observer.csv,10,The News & Observer,en
+466,10_The_New_Yorker.csv,10,The New Yorker,en
+467,10_The_New_York_Times.csv,10,The New York Times,en
+468,10_The_People-s_Voice.csv,10,The People's Voice,en
+469,10_The_Times_of_Northwest_Indiana.csv,10,The Times of Northwest Indiana,en
+470,11_Athens_Banner-Herald_-_OnlineAthens-com.csv,11,Athens Banner-Herald & OnlineAthens.com,en
+471,11_FRONTLINE_-_PBS.csv,11,FRONTLINE | PBS,en
+472,11_Journal_Star.csv,11,Journal Star,en
+473,11_openDemocracy.csv,11,openDemocracy,en
+474,11_Opposing_Views.csv,11,Opposing Views,en
+475,11_Ora_TV.csv,11,Ora TV,en
+476,11_Orlando_Sentinel.csv,11,Orlando Sentinel,en
+477,11_Orlando_Weekly.csv,11,Orlando Weekly,en
+478,11_Ozock_Drama.csv,11,Ozock Drama,et
+479,11_Patch.csv,11,Patch,en
+480,11_Patheos.csv,11,Patheos,en
+481,11_PBS_NewsHour.csv,11,PBS NewsHour,en
+482,11_Pensacola_News_Journal.csv,11,Pensacola News Journal,en
+483,11_People.csv,11,People,en
+484,11_Pew_Research_Center.csv,11,Pew Research Center,en
+485,11_Phoenix_New_Times.csv,11,Phoenix New Times,en
+486,11_Pittsburgh_Post-Gazette.csv,11,Pittsburgh Post-Gazette,en
+487,11_PIX_11.csv,11,PIX 11,en
+488,11_PJ_Media.csv,11,PJ Media,en
+489,11_Police1.csv,11,Police1,en
+490,11_POLITICO.csv,11,POLITICO,en
+491,11_PoliticusUSA.csv,11,PoliticusUSA,en
+492,11_PolitiFact.csv,11,PolitiFact,en
+493,11_Popular_Military.csv,11,Popular Military,en
+494,11_Post_Bulletin.csv,11,Post Bulletin,en
+495,11_Poughkeepsie_Journal.csv,11,Poughkeepsie Journal,en
+496,11_Power_Line.csv,11,Power Line,en
+497,11_Poynter.csv,11,Poynter,en
+498,11_Press_Democrat.csv,11,Press Democrat,en
+499,11_Press_TV.csv,11,Press TV,en
+500,11_Project_Syndicate.csv,11,Project Syndicate,en
+501,11_ProPublica.csv,11,ProPublica,en
+502,11_Q13_FOX.csv,11,Q13 FOX,en
+503,11_Quad-City_Times.csv,11,Quad-City Times,en
+504,11_QZ.csv,11,QZ,en
+505,11_Rare_News.csv,11,Rare News,en
+506,11_Rasmussen_Reports.csv,11,Rasmussen Reports,en
+507,11_The_Oregonian.csv,11,The Oregonian,en
+508,11_The_Palm_Beach_Post.csv,11,The Palm Beach Post,en
+509,11_The_Pantagraph.csv,11,The Pantagraph,en
+510,11_The_Patriot_Ledger.csv,11,The Patriot Ledger,en
+511,11_The_Post-Crescent_-Appleton-Fox_Cities-_Wisconsin-.csv,11,"The Post-Crescent (Appleton-Fox Cities, Wisconsin)",en
+512,11_The_Post_and_Courier.csv,11,The Post and Courier,en
+513,11_The_Press-Enterprise.csv,11,The Press-Enterprise,en
+514,11_The_Press_of_Atlantic_City.csv,11,The Press of Atlantic City,en
+515,11_The_Providence_Journal.csv,11,The Providence Journal,en
+516,11_The_Raw_Story.csv,11,The Raw Story,en
+517,11_The_Virginian-Pilot.csv,11,The Virginian-Pilot,en
+518,12_Las_Vegas_Review-Journal.csv,12,Las Vegas Review-Journal,en
+519,12_Reader_Supported_News.csv,12,Reader Supported News,en
+520,12_Reading_Eagle.csv,12,Reading Eagle,en
+521,12_RealClearPolitics.csv,12,RealClearPolitics,en
+522,12_Reason_Magazine.csv,12,Reason Magazine,en
+523,12_recordonline-com.csv,12,recordonline.com,en
+524,12_Record_Searchlight_-_Redding-com.csv,12,Record Searchlight | Redding.com,en
+525,12_RedState.csv,12,RedState,en
+526,12_Refinery29.csv,12,Refinery29,en
+527,12_Render_MEDIA.csv,12,Render MEDIA,en
+528,12_Reuters.csv,12,Reuters,en
+529,12_Reveal_from_The_Center_for_Investigative_Reporting.csv,12,Reveal from The Center for Investigative Reporting,en
+530,12_RGJ__Reno_Gazette_Journal.csv,12,RGJ  Reno Gazette Journal,en
+531,12_Richmond_Times-Dispatch.csv,12,Richmond Times-Dispatch,en
+532,12_Right_Wing_Watch.csv,12,Right Wing Watch,en
+533,12_Rockford_Register_Star_-_rrstar-com.csv,12,Rockford Register Star | rrstar.com,en
+534,12_Rolling_Stone.csv,12,Rolling Stone,en
+535,12_Roll_Call.csv,12,Roll Call,en
+536,12_RT.csv,12,RT,en
+537,12_Rush_Limbaugh.csv,12,Rush Limbaugh,en
+538,12_Salon.csv,12,Salon,en
+539,12_Santa_Cruz_Sentinel.csv,12,Santa Cruz Sentinel,en
+540,12_San_Diego_Reader.csv,12,San Diego Reader,en
+541,12_San_Francisco_Chronicle.csv,12,San Francisco Chronicle,en
+542,12_San_Francisco_Examiner.csv,12,San Francisco Examiner,en
+543,12_Sauk_Valley_Media.csv,12,Sauk Valley Media,en
+544,12_Savannah_Morning_News_-_SavannahNow-com.csv,12,Savannah Morning News & SavannahNow.com,en
+545,12_Scoopnest.csv,12,Scoopnest,es
+546,12_Scripps_National_News.csv,12,Scripps National News,en
+547,12_Seacoastonline-com.csv,12,Seacoastonline.com,en
+548,12_seattlepi-com.csv,12,seattlepi.com,en
+549,12_SFGATE.csv,12,SFGATE,en
+550,12_SF_Weekly.csv,12,SF Weekly,en
+551,12_Sky_News.csv,12,Sky News,en
+552,12_SLO_Tribune.csv,12,SLO Tribune,en
+553,12_St-_Cloud_Times.csv,12,St. Cloud Times,en
+554,12_Staten_Island_Advance.csv,12,Staten Island Advance,en
+555,12_The_Register-Guard.csv,12,The Register-Guard,en
+556,12_The_Roanoke_Times.csv,12,The Roanoke Times,en
+557,12_The_Sacramento_Bee.csv,12,The Sacramento Bee,en
+558,12_The_San_Diego_Union-Tribune.csv,12,The San Diego Union-Tribune,en
+559,12_The_Scotsman.csv,12,The Scotsman,en
+560,12_The_Seattle_Times.csv,12,The Seattle Times,en
+561,12_The_Shelby_Star.csv,12,The Shelby Star,en
+562,12_The_State_Journal-Register.csv,12,The State Journal-Register,en
+563,13_Austin_American-Statesman.csv,13,Austin American-Statesman,en
+564,13_Bradlee_Dean.csv,13,Bradlee Dean,en
+565,13_Fort_Worth_Star-Telegram.csv,13,Fort Worth Star-Telegram,en
+566,13_Honolulu_Star-Advertiser.csv,13,Honolulu Star-Advertiser,en
+567,13_London_Evening_Standard.csv,13,London Evening Standard,en
+568,13_Mark_Steyn.csv,13,Mark Steyn,en
+569,13_Slate-com.csv,13,Slate.com,en
+570,13_snopes-com.csv,13,snopes.com,en
+571,13_Someecards.csv,13,Someecards,en
+572,13_SouthCoast_Today.csv,13,SouthCoast Today,en
+573,13_Southeast_Missourian.csv,13,Southeast Missourian,en
+574,13_South_Bend_Tribune.csv,13,South Bend Tribune,en
+575,13_South_Florida_Sun_Sentinel.csv,13,South Florida Sun Sentinel,en
+576,13_St-_Louis_Post-Dispatch.csv,13,St. Louis Post-Dispatch,en
+577,13_Stamford_Advocate.csv,13,Stamford Advocate,en
+578,13_Standard_News.csv,13,Standard News,en
+579,13_StarNews.csv,13,StarNews,en
+580,13_Stars_and_Stripes.csv,13,Stars and Stripes,en
+581,13_Star_Tribune.csv,13,Star Tribune,en
+582,13_Statesman_Journal.csv,13,Statesman Journal,en
+583,13_SUCCESS_Magazine.csv,13,SUCCESS Magazine,en
+584,13_SunHerald.csv,13,SunHerald,en
+585,13_syracuse-com.csv,13,syracuse.com,en
+586,13_Tactical_Shit.csv,13,Tactical Shit,en
+587,13_Talking_Points_Memo.csv,13,Talking Points Memo,en
+588,13_Tallahassee_Democrat.csv,13,Tallahassee Democrat,en
+589,13_Tampa_Bay_Times.csv,13,Tampa Bay Times,en
+590,13_TCPalm.csv,13,TCPalm,en
+591,13_TechCrunch.csv,13,TechCrunch,en
+592,13_Tennessean.csv,13,Tennessean,en
+593,13_TheBlaze.csv,13,TheBlaze,en
+594,13_The_Advocate_-Baton_Rouge-_LA-.csv,13,"The Advocate (Baton Rouge, LA)",en
+595,13_The_American_Conservative.csv,13,The American Conservative,en
+596,13_The_American_Spectator.csv,13,The American Spectator,en
+597,13_The_Atlantic.csv,13,The Atlantic,en
+598,13_The_Charlotte_Observer.csv,13,The Charlotte Observer,en
+599,13_The_Chicago_Sun-Times.csv,13,The Chicago Sun-Times,en
+600,13_The_Conversation.csv,13,The Conversation,en
+601,13_The_Cut.csv,13,The Cut,en
+602,13_The_Harvard_Crimson.csv,13,The Harvard Crimson,en
+603,13_The_Salt_Lake_Tribune.csv,13,The Salt Lake Tribune,en
+604,13_The_Spectator.csv,13,The Spectator,en
+605,13_The_Spokesman-Review.csv,13,The Spokesman-Review,en
+606,13_The_Telegraph.csv,13,The Telegraph,en
+607,13_Worcester_Telegram_-_Gazette.csv,13,Worcester Telegram & Gazette,en
+608,14_Albany_Times_Union.csv,14,Albany Times Union,en
+609,14_Center_For_American_Progress_Action_Fund.csv,14,Center For American Progress Action Fund,en
+610,14_Chattanooga_Times_Free_Press.csv,14,Chattanooga Times Free Press,en
+611,14_Denver7.csv,14,Denver7,en
+612,14_Desert_Sun.csv,14,Desert Sun,en
+613,14_Gateway_Pundit.csv,14,Gateway Pundit,en
+614,14_TheGrio.csv,14,TheGrio,en
+615,14_The_Blade.csv,14,The Blade,en
+616,14_The_Daily_Beast.csv,14,The Daily Beast,en
+617,14_The_Daily_Pennsylvanian.csv,14,The Daily Pennsylvanian,en
+618,14_The_Day.csv,14,The Day,en
+619,14_The_Diplomat_Magazine.csv,14,The Diplomat Magazine,en
+620,14_The_Epoch_Times.csv,14,The Epoch Times,en
+621,14_The_Federalist.csv,14,The Federalist,en
+622,14_The_Federalist_Papers.csv,14,The Federalist Papers,en
+623,14_The_Free_Thought_Project_4-0.csv,14,The Free Thought Project 4.0,en
+624,14_The_Guardian.csv,14,The Guardian,en
+625,14_The_Hill.csv,14,The Hill,en
+626,14_The_Intercept.csv,14,The Intercept,en
+627,14_The_Ledger.csv,14,The Ledger,en
+628,14_The_Mind_Unleashed.csv,14,The Mind Unleashed,en
+629,14_The_Nation_Magazine.csv,14,The Nation Magazine,en
+630,14_The_News-Herald.csv,14,The News-Herald,en
+631,14_The_News_Tribune.csv,14,The News Tribune,en
+632,14_The_New_American_Magazine.csv,14,The New American Magazine,en
+633,14_The_New_Civil_Rights_Movement.csv,14,The New Civil Rights Movement,en
+634,14_The_Olympian.csv,14,The Olympian,en
+635,14_The_Onion.csv,14,The Onion,en
+636,14_The_Political_Insider.csv,14,The Political Insider,en
+637,14_The_Real_News_Network.csv,14,The Real News Network,en
+638,14_The_Right_Scoop.csv,14,The Right Scoop,en
+639,14_The_Ringer.csv,14,The Ringer,en
+640,14_The_Root.csv,14,The Root,en
+641,14_The_State_Newspaper.csv,14,The State Newspaper,en
+642,14_The_Stranger.csv,14,The Stranger,en
+643,14_The_Sun.csv,14,The Sun,en
+644,14_The_Tab.csv,14,The Tab,en
+645,14_The_Times-News.csv,14,The Times-News,en
+646,14_The_Times_and_The_Sunday_Times.csv,14,The Times and The Sunday Times,en
+647,14_The_Times_of_Israel.csv,14,The Times of Israel,en
+648,14_The_Toronto_Star.csv,14,The Toronto Star,en
+649,14_The_Week_UK.csv,14,The Week UK,en
+650,14_TIME.csv,14,TIME,en
+651,14_TMZ.csv,14,TMZ,en
+652,14_Today_Show.csv,14,Today Show,en
+653,15_22_Words.csv,15,22 Words,en
+654,15_Arizona_Daily_Star.csv,15,Arizona Daily Star,en
+655,15_Casper_Star-Tribune.csv,15,Casper Star-Tribune,en
+656,15_CBS_4_News_Rio_Grande_Valley.csv,15,CBS 4 News Rio Grande Valley,en
+657,15_Daily_Press_California.csv,15,Daily Press California,en
+658,15_New_Hampshire_Union_Leader.csv,15,New Hampshire Union Leader,en
+659,15_Observer-Dispatch.csv,15,Observer-Dispatch,en
+660,15_Pioneer_Press.csv,15,Pioneer Press,en
+661,15_Spectrum_News_NY1.csv,15,Spectrum News NY1,en
+662,15_The_Ring_of_Fire.csv,15,The Ring of Fire,en
+663,15_The_Young_Turks.csv,15,The Young Turks,en
+664,15_Top_Right_News.csv,15,Top Right News,en
+665,15_Townhall-com.csv,15,Townhall.com,en
+666,15_Trendchaser.csv,15,Trendchaser,en
+667,15_Tri-City_Herald.csv,15,Tri-City Herald,en
+668,15_TribLive.csv,15,TribLive,en
+669,15_True_Activist.csv,15,True Activist,en
+670,15_Truthdig.csv,15,Truthdig,en
+671,15_Truthout.csv,15,Truthout,en
+672,15_Truth_And_Action.csv,15,Truth And Action,en
+673,15_Twitchy.csv,15,Twitchy,en
+674,15_U-S-_News_and_World_Report.csv,15,U.S. News and World Report,en
+675,15_United_With_Israel.csv,15,United With Israel,en
+676,15_Univision_Noticias.csv,15,Univision Noticias,es
+677,15_UPI_News_Agency.csv,15,UPI News Agency,en
+678,15_UPROXX.csv,15,UPROXX,en
+679,15_Upworthy.csv,15,Upworthy,en
+680,15_USA_TODAY.csv,15,USA TODAY,en
+681,15_Vanity_Fair.csv,15,Vanity Fair,en
+682,15_Variety.csv,15,Variety,en
+683,15_Ventura_County_Star.csv,15,Ventura County Star,en
+684,15_VICE.csv,15,VICE,en
+685,15_Village_Voice.csv,15,Village Voice,en
+686,15_VirtualJerusalem-com.csv,15,VirtualJerusalem.com,en
+687,15_Voice_of_America_-_VOA.csv,15,Voice of America - VOA,en
+688,15_Vox.csv,15,Vox,en
+689,15_Waco_Tribune-Herald.csv,15,Waco Tribune-Herald,en
+690,15_WALB_News_10.csv,15,WALB News 10,en
+691,15_WalesOnline.csv,15,WalesOnline,en
+692,15_WANE_15.csv,15,WANE 15,en
+693,15_Washington_City_Paper.csv,15,Washington City Paper,en
+694,15_Washington_Examiner.csv,15,Washington Examiner,en
+695,15_Washington_Monthly.csv,15,Washington Monthly,en
+696,15_Washington_Post.csv,15,Washington Post,en
+697,16_ABC_7_News_-_WJLA.csv,16,ABC 7 News - WJLA,en
+698,16_News_4_WIVB_Buffalo.csv,16,News 4 WIVB Buffalo,en
+699,16_NEWS_CENTER_Maine.csv,16,NEWS CENTER Maine,en
+700,16_The_Washington_Times.csv,16,The Washington Times,en
+701,16_The_Western_Journal.csv,16,The Western Journal,en
+702,16_Waterloo-Cedar_Falls_Courier.csv,16,Waterloo-Cedar Falls Courier,en
+703,16_WATE_6_On_Your_Side.csv,16,WATE 6 On Your Side,en
+704,16_wattsupwiththat.csv,16,wattsupwiththat,en
+705,16_WAVE_3_News.csv,16,WAVE 3 News,en
+706,16_WAVY_TV_10.csv,16,WAVY TV 10,en
+707,16_WBAL-TV_11_Baltimore.csv,16,WBAL-TV 11 Baltimore,en
+708,16_WBAY_TV-2.csv,16,WBAY TV-2,en
+709,16_WBIR_Channel_10.csv,16,WBIR Channel 10,en
+710,16_WBOC_TV_16_Delmarva-s_News_Leader.csv,16,WBOC TV 16 Delmarva's News Leader,en
+711,16_WBRC_FOX6_News.csv,16,WBRC FOX6 News,en
+712,16_WBTW_News13_CBS.csv,16,WBTW News13 CBS,en
+713,16_WBUR_90-9_FM.csv,16,WBUR 90.9 FM,en
+714,16_WCAX-TV.csv,16,WCAX-TV,en
+715,16_WCHS_-_WVAH_TV.csv,16,WCHS & WVAH TV,en
+716,16_WCNC_Charlotte.csv,16,WCNC Charlotte,en
+717,16_WCPO_9.csv,16,WCPO 9,en
+718,16_WCVB_Channel_5_Boston.csv,16,WCVB Channel 5 Boston,en
+719,16_WDBJ7.csv,16,WDBJ7,en
+720,16_WDTN-TV.csv,16,WDTN-TV,en
+721,16_WeaselZippers.csv,16,WeaselZippers,en
+722,16_WFAA.csv,16,WFAA,en
+723,16_WFLA_News_Channel_8.csv,16,WFLA News Channel 8,en
+724,16_WFMZ.csv,16,WFMZ,en
+725,16_WFSB_-_Channel_3_Eyewitness_News.csv,16,WFSB - Channel 3 Eyewitness News,en
+726,16_WFTV_Channel_9.csv,16,WFTV Channel 9,en
+727,16_WGAL_News_Channel_8_Susquehanna_Valley-_Pa-.csv,16,"WGAL News Channel 8 Susquehanna Valley, Pa.",en
+728,16_WGN_TV.csv,16,WGN TV,en
+729,16_WGRZ_-_Channel_2-_Buffalo.csv,16,"WGRZ - Channel 2, Buffalo",en
+730,16_WHAS11_News.csv,16,WHAS11 News,en
+731,16_WHIO.csv,16,WHIO,en
+732,16_WHNT_News_19.csv,16,WHNT News 19,en
+733,16_Wicked_Local.csv,16,Wicked Local,en
+734,16_WIRED.csv,16,WIRED,en
+735,16_WISH-TV.csv,16,WISH-TV,en
+736,16_WISN_12_NEWS.csv,16,WISN 12 NEWS,en
+737,16_WIS_TV.csv,16,WIS TV,en
+738,16_WKOW_27.csv,16,WKOW 27,en
+739,16_WKYC_Channel_3_-_Cleveland.csv,16,WKYC Channel 3 - Cleveland,en
+740,16_WLOX-TV.csv,16,WLOX-TV,en
+741,16_WLWT.csv,16,WLWT,en
+742,16_WMUR-TV.csv,16,WMUR-TV,en
+743,16_WND.csv,16,WND,en
+744,16_WNDU.csv,16,WNDU,en
+745,16_WNEP-TV.csv,16,WNEP-TV,en
+746,17_10_Tampa_Bay.csv,17,10 Tampa Bay,en
+747,17_13_On_Your_Side.csv,17,13 On Your Side,en
+748,17_ABC_8News_-_WRIC.csv,17,ABC 8News - WRIC,en
+749,17_Charleston_Gazette-Mail.csv,17,Charleston Gazette-Mail,en
+750,17_The_Wall_Street_Journal.csv,17,The Wall Street Journal,en
+751,17_WNYC.csv,17,WNYC,en
+752,17_WOOD_TV8.csv,17,WOOD TV8,en
+753,17_WorldTruth-TV.csv,17,WorldTruth.TV,en
+754,17_World_News_Daily_Report.csv,17,World News Daily Report,en
+755,17_World_News_Network.csv,17,World News Network,en
+756,17_WPBF_25_News.csv,17,WPBF 25 News,en
+757,17_WPRI_12.csv,17,WPRI 12,en
+758,17_WPXI-TV_Pittsburgh.csv,17,WPXI-TV Pittsburgh,en
+759,17_WRAL_TV.csv,17,WRAL TV,en
+760,17_WRCB_Channel_3_Eyewitness_News.csv,17,WRCB Channel 3 Eyewitness News,en
+761,17_WSB-TV.csv,17,WSB-TV,en
+762,17_WSBT-TV.csv,17,WSBT-TV,en
+763,17_WSFA-TV.csv,17,WSFA-TV,en
+764,17_WTHR-TV.csv,17,WTHR-TV,en
+765,17_WTNH_News_8.csv,17,WTNH News 8,en
+766,17_WTOL_11.csv,17,WTOL 11,en
+767,17_WTOP_News.csv,17,WTOP News,en
+768,17_WTVR_CBS_6_News.csv,17,WTVR CBS 6 News,en
+769,17_WUSA_9.csv,17,WUSA 9,en
+770,17_WWLP-22News.csv,17,WWLP-22News,en
+771,17_WWLTV.csv,17,WWLTV,en
+772,17_WXYZ-TV_Channel_7.csv,17,WXYZ-TV Channel 7,en
+773,17_WYFF_News_4.csv,17,WYFF News 4,en
+774,17_Yahoo_News.csv,17,Yahoo News,en
+775,17_Ynetnews.csv,17,Ynetnews,en
+776,17_Zero_Hedge.csv,17,Zero Hedge,en
+777,18_PBS.csv,18,PBS,en

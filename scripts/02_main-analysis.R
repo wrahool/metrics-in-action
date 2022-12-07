@@ -1,5 +1,4 @@
-# this script produces the main results (table 1) and figures 2 and 3 in the main text.
-
+# this script produces Figures 2 and 3 in the main text.
 
 library(rjson)
 library(tidyverse)
@@ -15,20 +14,16 @@ library(ggrepel)
 library(ggpubr)
 library(plm)
 
-# set correct path to folder with all CSV files
-# data_folder <- "/path/to/data/folder/"
 
-# read aggregated data
-model_tbl <- read_csv(glue(data_folder, "aggregated_data-60_periods-window-1.csv"))
+# set lag and window size
+lag <- 1 # in days
+window_size <- 1 # in days
+start_season <- 1
+end_season <- 60
+all_seasons <- start_season:end_season
 
-# read handcoded files
-topic_entertainment <- read_csv(glue(data_folder, "topic_entertainment_60.csv"))
-topic_politics <- read_csv(glue(data_folder, "topic_politicization_handcode_60.csv"))
-
-# read media details files
-media_details_tbl <- read_csv(glue(data_folder, "media_language.csv"))
-media_label_map <- read_csv(glue(data_folder, "media_label_map.csv"))
-media_ideology <- read_csv(glue(data_folder, "media_ideo.csv"))
+agg_data_folder <- "C:/Users/Subhayan/Desktop/RnR code/model_data"
+model_tbl <- read_csv(glue("{agg_data_folder}/aggregated_data-60_periods-window-1.csv"))
 
 #SD of curr_topic_prop 
 
@@ -56,6 +51,8 @@ m5 <- felm(curr_topic_prop ~ log_eng_sig + last_topic_prop + last_topic_prop_all
              media_id + window + final_topic | 0 | media_id + window,
            data = model_tbl)
 
+topic_entertainment <- read_csv(glue("auxiliary//topic_entertainment_60.csv"))
+topic_politics <- read_csv(glue("auxiliary//topic_politicization_handcode_60.csv"))
 
 topic_politics <- topic_politics %>%
   arrange(season, topic) %>%
@@ -87,16 +84,11 @@ m7 <- felm(curr_topic_prop ~ log_eng_sig * topic_political + log_eng_sig * topic
 modelsummary(models = list(m2, m4, m5, m7),
              output = "gt", stars = TRUE, statistic = c("std.error"), fmt = 4,
              coef_omit = "^topic") %>%
-  gtsave(filename = glue("results/JOC/seasonal/{params$n_seasons}-seasons/models/overleafresults/table1.tex"))
+  gtsave(filename = glue("results/table1.tex"))
 
 # outlet level
 
-to_exclude <- NULL
-m_coef_tbl <- NULL
 for(m_id in unique(model_tbl$media_id)) {
-  
-  if(m_id %in% to_exclude)
-    next
   
   message(m_id)
   m_m <- felm(curr_topic_prop  ~ log_eng_sig + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
@@ -143,6 +135,8 @@ for(m_id in unique(model_tbl$media_id)) {
     rbind(m_coef_tbl)
 }
 
+media_details_tbl <- read_csv("auxiliary/media_language.csv")
+
 m_coef_tbl <- m_coef_tbl %>%
   rename(n = 1, coeff = 2, p = 3, se = 4) %>%
   inner_join(media_details_tbl, by = "n") %>%
@@ -164,6 +158,7 @@ final_coef_tbl <- final_coef_tbl %>%
   mutate(season = "All Seasons") %>%
   select(media, season, everything())
 
+media_label_map <- read_csv("auxiliary/media_label_map.csv")
 
 outlet_viz_tbl <- final_coef_tbl %>%
   inner_join(media_label_map, by = c("media" = "label")) %>%
@@ -198,6 +193,8 @@ outlet_responsiveness_hor <- ggplot(outlet_viz_tbl) +
 
 ## correlation with ideology
 
+media_ideology <- read_csv("auxiliary/media_ideo.csv")
+
 media_ideology <- media_ideology %>%
   inner_join(media_label_map) %>%
   select(media, label, short_name, ideo)
@@ -221,7 +218,7 @@ resp_ideo_scatterplot <- ggplot(resp_ideo_tbl, aes(x=ideo, y=responsiveness)) +
 plot_grid(plotlist = list(outlet_responsiveness_hor, resp_ideo_scatterplot),
           labels = LETTERS)
 
-ggsave("figures/fig2.svg"), width = 10, height = 6, units = "in")
+ggsave("figures/fig2.svg", width = 10, height = 6, units = "in")
 
 # partisan topics
 
@@ -269,13 +266,13 @@ partisan_viz_tbl <- m_coef_tbl %>%
   arrange(n) %>%
   inner_join(media_ideology, by = c("media" = "label")) %>%
   select(short_name, coeff, ideo)
-  
+
 partisan_viz <- ggplot(partisan_viz_tbl, aes(x=ideo, y=coeff)) +
   geom_point() +
   geom_text_repel(label = partisan_viz_tbl$short_name, col = "black",
                   # nudge_x = 0.001, nudge_y = 0.001, 
                   # max.overlaps = 15, size = 3
-                  ) +
+  ) +
   geom_smooth(method = "lm", se = TRUE) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="ideology") +
@@ -334,7 +331,7 @@ entertainment_viz <- ggplot(entertainment_viz_tbl, aes(x=ideo, y=coeff)) +
   geom_point() +
   geom_text_repel(label = entertainment_viz_tbl$short_name, col = "black",
                   # max.overlaps = 15, size = 3
-                  ) +
+  ) +
   geom_smooth(method = "lm", se = TRUE) +
   stat_cor(method = "pearson", digits = 3) +
   labs(x="ideology") +
@@ -345,6 +342,88 @@ entertainment_viz <- ggplot(entertainment_viz_tbl, aes(x=ideo, y=coeff)) +
 plot_grid(plotlist = list(partisan_viz, entertainment_viz),
           labels = LETTERS)
 
-ggsave("figures/fig3.svg", width = 10, height = 6, units = "in")
+ggsave("results/fig3.svg", width = 10, height = 6, units = "in")
+
+
+# other topics
+
+# m_coef_tbl <- NULL
+# 
+# for(m_id in unique(model_tbl$media_id)) {
+#   
+#   if(m_id %in% to_exclude)
+#     next
+#   
+#   message(m_id)
+#   m_m <- felm(curr_topic_prop  ~ log_eng_sig + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
+#                 window + final_topic | 0 | window,
+#               data = model_tbl[model_tbl$media_id == m_id & model_tbl$entertainment != 1 & model_tbl$political != 2,])
+#   
+#   c <- m_m %>% 
+#     tidy() %>%
+#     filter(term == 'log_eng_sig') %>%
+#     pull(estimate)
+#   
+#   pv <- m_m %>% 
+#     tidy() %>%
+#     filter(term == 'log_eng_sig') %>%
+#     pull(p.value)
+#   
+#   se <- m_m %>%
+#     tidy() %>%
+#     filter(term == 'log_eng_sig') %>%
+#     pull(std.error)
+#   
+#   m_p_coef_tbl <- c(m_id, c, pv, se) %>%
+#     matrix() %>%
+#     t() %>%
+#     as_tibble()
+#   
+#   m_coef_tbl <- m_coef_tbl %>%
+#     rbind(m_p_coef_tbl)
+# }
+# 
+# other_viz_tbl <- m_coef_tbl %>%
+#   rename(n = 1, coeff = 2, pv = 3, se = 4) %>%
+#   mutate(n = as.numeric(n), coeff = as.numeric(coeff), pv = as.numeric(pv), se = as.numeric(se)) %>%
+#   inner_join(media_details_tbl, by = "n") %>%
+#   select(n, media, coeff, pv, se) %>%
+#   arrange(n) %>%
+#   inner_join(media_ideology, by = c("media" = "label")) %>%
+#   select(short_name, coeff, ideo)
+# 
+# other_viz <- ggplot(other_viz_tbl, aes(x=ideo, y=coeff)) +
+#   geom_point() +
+#   geom_text_repel(label = other_viz_tbl$short_name, col = "black",
+#                   # max.overlaps = 15, size = 3
+#   ) +
+#   geom_smooth(method = "lm", se = TRUE) +
+#   stat_cor(method = "pearson", digits = 3) +
+#   labs(x="ideology") +
+#   theme(strip.text.y = element_text(size = 30)) +
+#   labs(x = "Outlet slant", y = "Responsiveness") +
+#   theme_bw()
+# 
+# plot_grid(plotlist = list(partisan_viz, entertainment_viz, other_viz),
+#           labels = LETTERS)
+# 
+# partisan_viz_tbl <- partisan_viz_tbl %>%
+#   rename(partisan_resp = 2)
+# 
+# entertainment_viz_tbl <- entertainment_viz_tbl %>% 
+#   rename(entertainment_resp = 2)
+# 
+# other_viz_tbl <- other_viz_tbl %>% 
+#   rename(other_resp = 2)
+# 
+# all_resp <- partisan_viz_tbl %>%
+#   inner_join(entertainment_viz_tbl) %>% 
+#   inner_join(other_viz_tbl) %>% 
+#   rename(Media = 1) %>% 
+#   arrange(ideo) %>%
+#   select(Media, ideo, everything())
+# 
+# all_resp %>% 
+  write_csv("auxiliary/all_media_all_responsiveness.csv")
 
 

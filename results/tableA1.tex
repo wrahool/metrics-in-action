@@ -1,0 +1,30 @@
+\setlength{\LTpost}{0mm}
+\begin{longtable}{lcccc}
+\toprule
+  & Model 1 & Model 2 & Model 3 & Model 4 \\ 
+\midrule
+log\_eng\_sig & 0.0018*** & 0.0013** & 0.0013** & 0.0006 \\ 
+ & (0.0005) & (0.0005) & (0.0005) & (0.0005) \\ 
+last\_topic\_prop & 0.6842*** & 0.6830*** & 0.6781*** & 0.6780*** \\ 
+ & (0.0323) & (0.0327) & (0.0389) & (0.0389) \\ 
+log\_avg\_eng\_sig &  & 0.0083* & 0.0064*** & 0.0065*** \\ 
+ &  & (0.0032) & (0.0017) & (0.0017) \\ 
+last\_topic\_prop\_all &  &  & 0.0322 & 0.0324 \\ 
+ &  &  & (0.0433) & (0.0432) \\ 
+log\_eng\_sig × topic\_political &  &  &  & 0.0004 \\ 
+ &  &  &  & (0.0004) \\ 
+log\_eng\_sig × topic\_entertainment &  &  &  & 0.0026*** \\ 
+ &  &  &  & (0.0006) \\ 
+Num.Obs. & 1006077 & 1006077 & 1006077 & 1006077 \\ 
+R2 & 0.761 & 0.761 & 0.761 & 0.761 \\ 
+R2 Adj. & 0.760 & 0.760 & 0.760 & 0.760 \\ 
+AIC & -3908161.7 & -3908435.1 & -3908683.0 & -3908742.4 \\ 
+BIC & -3884010.3 & -3884271.8 & -3884507.9 & -3884543.7 \\ 
+RMSE & 0.03 & 0.03 & 0.03 & 0.03 \\ 
+Std.Errors & by: media\_id \& window & by: media\_id \& window & by: media\_id \& window & by: media\_id \& window \\ 
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}
++ p < 0.1, * p < 0.05, ** p < 0.01, *** p < 0.001\\
+\end{minipage}
+

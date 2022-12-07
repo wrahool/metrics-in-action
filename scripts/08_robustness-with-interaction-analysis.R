@@ -46,11 +46,6 @@ topic_pol_ent <- topic_pol_ent %>%
 model_tbl <- model_tbl %>%
   inner_join(topic_pol_ent, by = "final_topic")
 
-# m6 <- felm(curr_topic_prop ~ log_eng_sig * topic_other + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
-#              media_id + window + final_topic | 0 | media_id + window,
-#            data = model_tbl)
-
-
 media_details_tbl <- read_csv("auxiliary/media_language.csv")
 media_ideology <- read_csv("auxiliary/media_ideo.csv")
 media_ideology2 <- read_csv("auxiliary/media_ideo2.csv")

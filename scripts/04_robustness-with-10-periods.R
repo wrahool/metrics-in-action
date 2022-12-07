@@ -72,14 +72,9 @@ topic_pol_ent <- topic_pol_ent %>%
 model_tbl <- model_tbl %>%
   inner_join(topic_pol_ent, by = "final_topic")
 
-# m6 <- felm(curr_topic_prop ~ log_eng_sig * topic_other + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
-#              media_id + window + final_topic | 0 | media_id + window,
-#            data = model_tbl)
-
 m7 <- felm(curr_topic_prop ~ log_eng_sig * topic_political + log_eng_sig * topic_entertainment + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
              media_id + window + final_topic | 0 | media_id + window,
            data = model_tbl)
-
 
 modelsummary(models = list(m2, m4, m5, m7),
              output = "gt", stars = TRUE, statistic = c("std.error"), fmt = 4,
@@ -110,24 +105,6 @@ for(m_id in unique(model_tbl$media_id)) {
     tidy() %>%
     filter(term == 'log_eng_sig') %>%
     pull(std.error)
-  
-  # m_m2 <- felm(curr_topic_prop ~ log1p(eng_sig) + last_topic_prop | window + final_topic | 0 | window + final_topic,
-  #               data = model_tbl[model_tbl$media_id == m_id,])
-  # 
-  # c2 <- m_m2 %>%
-  #   tidy() %>%
-  #   filter(term == 'log1p(eng_sig)') %>%
-  #   pull(estimate)
-  # 
-  # p2 <- m_m2 %>%
-  #   tidy() %>%
-  #   filter(term == 'log1p(eng_sig)') %>%
-  #   pull(p.value)
-  # 
-  # se2 <- m_m2 %>%
-  #   tidy() %>%
-  #   filter(term == 'log1p(eng_sig)') %>%
-  #   pull(std.error)
   
   m_coef_tbl <- c(m_id, c, p, se) %>%
     matrix() %>%
@@ -338,87 +315,4 @@ plot_grid(plotlist = list(partisan_viz, entertainment_viz),
           labels = LETTERS)
 
 ggsave("figures/figA3.svg", width = 10, height = 6, units = "in")
-
-
-# other topics
-
-# m_coef_tbl <- NULL
-# 
-# for(m_id in unique(model_tbl$media_id)) {
-#   
-#   if(m_id %in% to_exclude)
-#     next
-#   
-#   message(m_id)
-#   m_m <- felm(curr_topic_prop  ~ log_eng_sig + last_topic_prop + last_topic_prop_all + log_avg_eng_sig |
-#                 window + final_topic | 0 | window,
-#               data = model_tbl[model_tbl$media_id == m_id & model_tbl$entertainment != 1 & model_tbl$political != 2,])
-#   
-#   c <- m_m %>% 
-#     tidy() %>%
-#     filter(term == 'log_eng_sig') %>%
-#     pull(estimate)
-#   
-#   pv <- m_m %>% 
-#     tidy() %>%
-#     filter(term == 'log_eng_sig') %>%
-#     pull(p.value)
-#   
-#   se <- m_m %>%
-#     tidy() %>%
-#     filter(term == 'log_eng_sig') %>%
-#     pull(std.error)
-#   
-#   m_p_coef_tbl <- c(m_id, c, pv, se) %>%
-#     matrix() %>%
-#     t() %>%
-#     as_tibble()
-#   
-#   m_coef_tbl <- m_coef_tbl %>%
-#     rbind(m_p_coef_tbl)
-# }
-# 
-# other_viz_tbl <- m_coef_tbl %>%
-#   rename(n = 1, coeff = 2, pv = 3, se = 4) %>%
-#   mutate(n = as.numeric(n), coeff = as.numeric(coeff), pv = as.numeric(pv), se = as.numeric(se)) %>%
-#   inner_join(media_details_tbl, by = "n") %>%
-#   select(n, media, coeff, pv, se) %>%
-#   arrange(n) %>%
-#   inner_join(media_ideology, by = c("media" = "label")) %>%
-#   select(short_name, coeff, ideo)
-# 
-# other_viz <- ggplot(other_viz_tbl, aes(x=ideo, y=coeff)) +
-#   geom_point() +
-#   geom_text_repel(label = other_viz_tbl$short_name, col = "black",
-#                   # max.overlaps = 15, size = 3
-#   ) +
-#   geom_smooth(method = "lm", se = TRUE) +
-#   stat_cor(method = "pearson", digits = 3) +
-#   labs(x="ideology") +
-#   theme(strip.text.y = element_text(size = 30)) +
-#   labs(x = "Outlet slant", y = "Responsiveness") +
-#   theme_bw()
-# 
-# plot_grid(plotlist = list(partisan_viz, entertainment_viz, other_viz),
-#           labels = LETTERS)
-# 
-# partisan_viz_tbl <- partisan_viz_tbl %>%
-#   rename(partisan_resp = 2)
-# 
-# entertainment_viz_tbl <- entertainment_viz_tbl %>% 
-#   rename(entertainment_resp = 2)
-# 
-# other_viz_tbl <- other_viz_tbl %>% 
-#   rename(other_resp = 2)
-# 
-# all_resp <- partisan_viz_tbl %>%
-#   inner_join(entertainment_viz_tbl) %>% 
-#   inner_join(other_viz_tbl) %>% 
-#   rename(Media = 1) %>% 
-#   arrange(ideo) %>%
-#   select(Media, ideo, everything())
-# 
-# all_resp %>% 
-# write_csv("auxiliary/all_media_all_responsiveness.csv")
-
 

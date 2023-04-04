@@ -84,6 +84,8 @@ modelsummary(models = list(m2, m4, m5, m7),
 
 # outlet level
 
+m_coef_tbl <- NULL
+
 for(m_id in unique(model_tbl$media_id)) {
   
   message(m_id)
